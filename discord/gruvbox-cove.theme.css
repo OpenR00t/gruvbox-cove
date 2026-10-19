@@ -1,8 +1,8 @@
 /**
  * @name Gruvbox Cove
  * @author The Gruvbox Cove contributors
- * @version 1.0.2
- * @description Gruvbox dark for Discord: green accent, CaskaydiaCove interface, Cove Sans SemiLight messages. Built from Catppuccin's Discord theme (MIT).
+ * @version 1.0.3
+ * @description Gruvbox dark for Discord: green accent, CaskaydiaCove interface, Cove Sans Light messages. Built from Catppuccin's Discord theme (MIT).
  * @license MIT
 **/
 /*
@@ -1908,7 +1908,8 @@
   --font-headline: var(--gbc-mono) !important;
   --font-code: var(--gbc-mono) !important;
 }
-/* Prose: message text, embed descriptions, forum/thread previews -> Cove Sans SemiLight.
+/* Prose: message text, embed descriptions, forum/thread previews -> Cove Sans Light (300): one step below the
+   SemiLight used elsewhere, which reads heavy at Discord's 16px message size.
    Message bodies are matched by their id (message-content-<id>), which survives Discord's class renames;
    the text sits in child spans that Discord gives its own font, so children are set too. */
 :is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
@@ -1916,7 +1917,7 @@
 :is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
     [class*="threadMessageAccessoryContent"], [class*="repliedTextContent"]) *:not(code):not(pre):not(pre *):not(h1):not(h2):not(h3):not(strong):not(b) {
   font-family: var(--gbc-read) !important;
-  font-weight: 350 !important;
+  font-weight: 300 !important;
 }
 :is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"]) :is(strong, b) {
   font-weight: 700 !important;
