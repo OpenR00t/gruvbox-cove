@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — DuckDuckGo
 @namespace    gruvbox-cove
-@version      1.0.1
+@version      1.0.2
 @description  Gruvbox dark, green accent, CaskaydiaCove interface and result titles, Cove Sans for result snippets, answers and Duck.ai replies. Works with any DuckDuckGo theme setting.
 @author       The Gruvbox Cove contributors
 @license      MIT
@@ -102,7 +102,6 @@
     --theme-col-bg-header-modal: #3c3836 !important;
     --theme-col-bg-button-primary: #83a598 !important;
     --sds-color-background-dark: #1d2021 !important;
-    /* chat */
     --sds-color-text-link-02-hover: #ebdbb2 !important;
     --theme-dc-color-background-dark: #282828 !important;
     --theme-dc-color-gpt-main: #d3869b !important;
@@ -132,7 +131,6 @@
     --theme-assist-bg-chat-system: #1d2021 !important;
     --theme-assist-gradient-stop: #1d2021 !important;
     --sds-color-palette-gray-40: #ebdbb2 !important;
-    /* maps */
     --sds-color-background-01: #282828 !important;
     --sds-color-background-02: #1d2021 !important;
     --sds-color-palette-red-40: #fb4934 !important;
@@ -140,16 +138,6 @@
     --col-blue-30: #83a598 !important;
     --sds-color-palette-green-60: #b8bb26 !important;
     --sds-color-background-utility: #3c3836 !important;
-    /* .dropdown--settings--icon .dropdown__button:after needs visibility: hidden, otherwise we get a case of clashing icons */
-    /* privacy reminders */
-    /* stopwatch */
-    /* html chars */
-    /* cal */
-    /* button on hover */
-    /* stocks infobox */
-    /* color box */
-    /* chat */
-    /* lyrics box */
   }
   :root:not(.dark-bg, .no-theme) ::selection {
     background-color: #665c54;
@@ -1059,7 +1047,6 @@
     --theme-col-bg-header-modal: #3c3836 !important;
     --theme-col-bg-button-primary: #83a598 !important;
     --sds-color-background-dark: #1d2021 !important;
-    /* chat */
     --sds-color-text-link-02-hover: #ebdbb2 !important;
     --theme-dc-color-background-dark: #282828 !important;
     --theme-dc-color-gpt-main: #d3869b !important;
@@ -1089,7 +1076,6 @@
     --theme-assist-bg-chat-system: #1d2021 !important;
     --theme-assist-gradient-stop: #1d2021 !important;
     --sds-color-palette-gray-40: #ebdbb2 !important;
-    /* maps */
     --sds-color-background-01: #282828 !important;
     --sds-color-background-02: #1d2021 !important;
     --sds-color-palette-red-40: #fb4934 !important;
@@ -1097,16 +1083,6 @@
     --col-blue-30: #83a598 !important;
     --sds-color-palette-green-60: #b8bb26 !important;
     --sds-color-background-utility: #3c3836 !important;
-    /* .dropdown--settings--icon .dropdown__button:after needs visibility: hidden, otherwise we get a case of clashing icons */
-    /* privacy reminders */
-    /* stopwatch */
-    /* html chars */
-    /* cal */
-    /* button on hover */
-    /* stocks infobox */
-    /* color box */
-    /* chat */
-    /* lyrics box */
   }
   :root.dark-bg ::selection {
     background-color: #665c54;
@@ -2017,7 +1993,6 @@
       --theme-col-bg-header-modal: #3c3836 !important;
       --theme-col-bg-button-primary: #83a598 !important;
       --sds-color-background-dark: #1d2021 !important;
-      /* chat */
       --sds-color-text-link-02-hover: #ebdbb2 !important;
       --theme-dc-color-background-dark: #282828 !important;
       --theme-dc-color-gpt-main: #d3869b !important;
@@ -2047,7 +2022,6 @@
       --theme-assist-bg-chat-system: #1d2021 !important;
       --theme-assist-gradient-stop: #1d2021 !important;
       --sds-color-palette-gray-40: #ebdbb2 !important;
-      /* maps */
       --sds-color-background-01: #282828 !important;
       --sds-color-background-02: #1d2021 !important;
       --sds-color-palette-red-40: #fb4934 !important;
@@ -2055,16 +2029,6 @@
       --col-blue-30: #83a598 !important;
       --sds-color-palette-green-60: #b8bb26 !important;
       --sds-color-background-utility: #3c3836 !important;
-      /* .dropdown--settings--icon .dropdown__button:after needs visibility: hidden, otherwise we get a case of clashing icons */
-      /* privacy reminders */
-      /* stopwatch */
-      /* html chars */
-      /* cal */
-      /* button on hover */
-      /* stocks infobox */
-      /* color box */
-      /* chat */
-      /* lyrics box */
     }
     :root.no-theme ::selection {
       background-color: #665c54;
@@ -2976,7 +2940,6 @@
       --theme-col-bg-header-modal: #3c3836 !important;
       --theme-col-bg-button-primary: #83a598 !important;
       --sds-color-background-dark: #1d2021 !important;
-      /* chat */
       --sds-color-text-link-02-hover: #ebdbb2 !important;
       --theme-dc-color-background-dark: #282828 !important;
       --theme-dc-color-gpt-main: #d3869b !important;
@@ -3006,7 +2969,6 @@
       --theme-assist-bg-chat-system: #1d2021 !important;
       --theme-assist-gradient-stop: #1d2021 !important;
       --sds-color-palette-gray-40: #ebdbb2 !important;
-      /* maps */
       --sds-color-background-01: #282828 !important;
       --sds-color-background-02: #1d2021 !important;
       --sds-color-palette-red-40: #fb4934 !important;
@@ -3014,16 +2976,6 @@
       --col-blue-30: #83a598 !important;
       --sds-color-palette-green-60: #b8bb26 !important;
       --sds-color-background-utility: #3c3836 !important;
-      /* .dropdown--settings--icon .dropdown__button:after needs visibility: hidden, otherwise we get a case of clashing icons */
-      /* privacy reminders */
-      /* stopwatch */
-      /* html chars */
-      /* cal */
-      /* button on hover */
-      /* stocks infobox */
-      /* color box */
-      /* chat */
-      /* lyrics box */
     }
     :root.no-theme ::selection {
       background-color: #665c54;

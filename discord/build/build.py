@@ -3,7 +3,7 @@
 """Rebuild ../gruvbox-cove.theme.css from Catppuccin's latest Discord theme.
 Needs: git, Node (npx/npm), Python 3. Run from this folder:  python build.py
 """
-import pathlib, shutil, subprocess, tempfile
+import pathlib, re, shutil, subprocess, tempfile
 HERE = pathlib.Path(__file__).parent
 OUT = HERE.parent / "gruvbox-cove.theme.css"
 run = lambda cmd, cwd: subprocess.run(cmd, cwd=cwd, shell=True, check=True)
@@ -19,5 +19,6 @@ with tempfile.TemporaryDirectory() as tmp:
 
 old = OUT.read_text(encoding="utf-8")
 head = old[:old.index("*/", old.index("Built from catppuccin/discord")) + 3]   # Vencord meta + attribution
-OUT.write_text(head + "\n" + css + (HERE / "extras.css").read_text(encoding="utf-8"), encoding="utf-8")
+extras = re.sub(r"\A/\* SPDX.*?\*/\s*", "", (HERE / "extras.css").read_text(encoding="utf-8"), flags=re.S)   # license header stays at the top of the output
+OUT.write_text(head + "\n" + css + extras, encoding="utf-8")
 print("rebuilt", OUT.name)

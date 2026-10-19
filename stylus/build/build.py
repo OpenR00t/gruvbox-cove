@@ -28,6 +28,7 @@ for site in ("github", "youtube", "duckduckgo"):
     prep = HERE / f"{site}.prep.less"
     prep.write_text((HERE / "shim.less").read_text() + less)
     css = subprocess.run(f'npx --yes less@4.2.0 "{prep}"', capture_output=True, text=True, shell=True, check=True).stdout
+    css = re.sub(r'[ \t]*/\*.*?\*/[ \t]*\n?', '', css, flags=re.S)   # drop upstream comments
     if site == "github":
         css = remap(css)
     target = OUT / f"gruvbox-cove-{site}.user.css"

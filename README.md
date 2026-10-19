@@ -38,6 +38,27 @@ primary accent (yellow only for warnings and types), and one type family:
 The GitHub, YouTube, DuckDuckGo and Discord themes are built from [Catppuccin](https://github.com/catppuccin)'s
 maintained themes with the gruvbox palette swapped in; their build scripts pull Catppuccin's latest when a site changes.
 
+## Staying up to date
+
+Install from GitHub and the managers update themselves; each theme's version is bumped whenever it changes.
+
+- **Stylus styles**: open the `.user.css` file on GitHub, click **Raw**, and Stylus offers to install it. Stylus then
+  checks that address for newer versions on its own (Manage → Check for updates to force it).
+- **Old reddit userscript**: same, from `reddit/reddit-auto-show-images.user.js` with Tampermonkey or Violentmonkey.
+- **Old reddit stylesheet**: RES can't load GitHub's raw links (they're served as plain text). Use the jsDelivr copy in
+  RES → Stylesheet Loader → Load Stylesheets:
+  `https://cdn.jsdelivr.net/gh/<owner>/gruvbox-cove@main/reddit/gruvbox-old-reddit.css` (cached for up to 12 hours).
+- **Vencord**: add `https://cdn.jsdelivr.net/gh/<owner>/gruvbox-cove@main/discord/gruvbox-cove.theme.css` under
+  Settings → Themes → Online Themes (same caching), or copy the file into the themes folder.
+
+Automations in `.github/workflows/`:
+- **Catppuccin update** (weekly): rebuilds the GitHub, YouTube, DuckDuckGo and Discord themes from Catppuccin's latest
+  templates and opens a pull request when anything changed.
+- **Wikipedia sync**: on every change to `wikipedia/gruvbox-wikipedia.css`, writes it to your `global.css` on Meta-Wiki.
+  Off until the repository variable `WIKI_SYNC` is `true`; needs the secrets `WIKI_USER` and `WIKI_BOT_PASSWORD`
+  (a bot password from Special:BotPasswords with the "Edit your user CSS/JSON/JavaScript" grant).
+- **Release**: pushing a `v*` tag attaches the VS Code extension (`.vsix`) and a Cove Sans zip to a GitHub release.
+
 ## License
 
 Licensed under the GNU Affero General Public License v3.0 or later. See [LICENSE](LICENSE).

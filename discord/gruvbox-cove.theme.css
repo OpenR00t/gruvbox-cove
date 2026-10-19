@@ -1,7 +1,7 @@
 /**
  * @name Gruvbox Cove
  * @author The Gruvbox Cove contributors
- * @version 1.0.0
+ * @version 1.0.1
  * @description Gruvbox dark for Discord: green accent, CaskaydiaCove interface, Cove Sans SemiLight messages. Built from Catppuccin's Discord theme (MIT).
  * @license MIT
 **/
@@ -1898,7 +1898,6 @@
 .visual-refresh .theme-midnight div[class*=button_][class*=dangerous_] {
   color: #fb4934;
 }
-
 /* ---------- Gruvbox Cove font rule ---------- */
 :root, .visual-refresh {
   --gbc-mono: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;

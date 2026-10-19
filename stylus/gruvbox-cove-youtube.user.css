@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — YouTube
 @namespace    gruvbox-cove
-@version      1.0.2
+@version      1.0.3
 @description  Gruvbox dark, green accent, CaskaydiaCove interface and titles, Cove Sans for descriptions, comments and chat. Set YouTube's appearance to Dark theme.
 @author       The Gruvbox Cove contributors
 @license      MIT
@@ -21,36 +21,6 @@
     scrollbar-color: #665c54 #1d2021;
     color: #ebdbb2;
     background: #282828;
-    /* Misc */
-    /* Selected chapter */
-    /* Skeleton */
-    /* Ambient mode */
-    /* Icons */
-    /* Notifications Bell and Indicator */
-    /* Buttons */
-    /* Search box */
-    /* Video description */
-    /* Links */
-    /* Course Playlist (e.g. https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6) */
-    /* Thumbnails */
-    /* Panels, popups, tooltips */
-    /* Video player */
-    /* Video highlight */
-    /* Video previews */
-    /* Shorts titles and views on homepage */
-    /* Buy super thanks bar */
-    /* Avatar */
-    /* Channel pages */
-    /* Components */
-    /* Menus and context sheets */
-    /* Dialogs */
-    /* Dropdowns */
-    /* Toggles/Switches */
-    /* Textareas */
-    /* Comments */
-    /* Profile Card */
-    /* Live chat replay */
-    /* Category tag pills */
   }
   :root[dark] ::selection {
     background-color: #665c54;
@@ -69,7 +39,6 @@
   :root[dark][darker-dark-theme] {
     --efyt-control-bar-background-color: #1d2021 !important;
     --dimmer-text: #ebdbb2 !important;
-    /* Newest Variables */
     --yt-sys-color-baseline--base-background: #282828 !important;
     --yt-sys-color-baseline--menu-background: #1d2021 !important;
     --yt-sys-color-baseline--raised-background: #3c3836 !important;
@@ -219,7 +188,6 @@
     --yt-spec-overlay-background-medium-light: rgba(40, 40, 40, 0.6) !important;
     --yt-spec-overlay-background-heavy: rgba(40, 40, 40, 0.8) !important;
     --yt-spec-overlay-background-solid: #282828 !important;
-    /* Search bar */
     --ytd-searchbox-border-color: #3c3836 !important;
     --ytd-searchbox-legacy-border-color: #3c3836 !important;
     --ytd-searchbox-legacy-border-shadow-color: #1d2021 !important;
@@ -231,11 +199,9 @@
     --ytd-searchbox-legacy-button-icon-color: #b8bb26 !important;
     --ytd-searchbox-background: #282828 !important;
     --ytd-searchbox-text-color: #ebdbb2 !important;
-    /* System icons */
     --yt-spec-icon-inactive: #ebdbb2 !important;
     --yt-spec-icon-disabled: #928374 !important;
     --yt-spec-brand-icon-inactive: #928374 !important;
-    /* Live chat */
     --yt-live-chat-background-color: #282828 !important;
     --yt-live-chat-primary-text-color: #ebdbb2 !important;
     --yt-live-chat-action-panel-background-color: #282828 !important;
@@ -287,7 +253,6 @@
     --yt-live-chat-action-panel-background-color-transparent: (null) !important;
     --paper-tooltip-background: #665c54 !important;
     --paper-tooltip-text-color: #ebdbb2 !important;
-    /* Links */
     --yt-endpoint-color: #ebdbb2 !important;
     --yt-endpoint-visited-color: #ebdbb2 !important;
     --yt-endpoint-hover-color: #b8bb26 !important;
@@ -464,7 +429,6 @@
   :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
     color: #ebdbb2;
     background-color: #3c3836;
-    /* Accent for filled-in thumbs up (like button) */
   }
   :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(3,3,3)"],
   :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(0,0,0)"],
@@ -493,7 +457,6 @@
   }
   :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
     color: #ebdbb2;
-    /* Accent for filled-in thumbs up (like button) */
   }
   :root[dark] .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text path[d="M3,11h3v10H3V11z M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11v10h10.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z"] {
     fill: #b8bb26;
@@ -756,7 +719,6 @@
   :root[dark] .html5-video-player {
     color: #ebdbb2;
     background-color: #1d2021;
-    /* stats for nerds */
   }
   :root[dark] .html5-video-player .ytp-swatch-background-color,
   :root[dark] .html5-video-player .ytp-play-progress {
@@ -809,7 +771,6 @@
   }
   :root[dark] #shorts-container {
     --yt-spec-static-overlay-text-primary: #ebdbb2;
-    /* Buy super thanks button */
   }
   :root[dark] #shorts-container .YtwFactoidRendererLabel {
     color: #a89984;
@@ -1054,36 +1015,6 @@
     scrollbar-color: #665c54 #1d2021;
     color: #ebdbb2;
     background: #282828;
-    /* Misc */
-    /* Selected chapter */
-    /* Skeleton */
-    /* Ambient mode */
-    /* Icons */
-    /* Notifications Bell and Indicator */
-    /* Buttons */
-    /* Search box */
-    /* Video description */
-    /* Links */
-    /* Course Playlist (e.g. https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6) */
-    /* Thumbnails */
-    /* Panels, popups, tooltips */
-    /* Video player */
-    /* Video highlight */
-    /* Video previews */
-    /* Shorts titles and views on homepage */
-    /* Buy super thanks bar */
-    /* Avatar */
-    /* Channel pages */
-    /* Components */
-    /* Menus and context sheets */
-    /* Dialogs */
-    /* Dropdowns */
-    /* Toggles/Switches */
-    /* Textareas */
-    /* Comments */
-    /* Profile Card */
-    /* Live chat replay */
-    /* Category tag pills */
   }
   :root:not([dark]) ::selection {
     background-color: #665c54;
@@ -1102,7 +1033,6 @@
   :root:not([dark])[darker-dark-theme] {
     --efyt-control-bar-background-color: #1d2021 !important;
     --dimmer-text: #ebdbb2 !important;
-    /* Newest Variables */
     --yt-sys-color-baseline--base-background: #282828 !important;
     --yt-sys-color-baseline--menu-background: #1d2021 !important;
     --yt-sys-color-baseline--raised-background: #3c3836 !important;
@@ -1252,7 +1182,6 @@
     --yt-spec-overlay-background-medium-light: rgba(40, 40, 40, 0.6) !important;
     --yt-spec-overlay-background-heavy: rgba(40, 40, 40, 0.8) !important;
     --yt-spec-overlay-background-solid: #282828 !important;
-    /* Search bar */
     --ytd-searchbox-border-color: #3c3836 !important;
     --ytd-searchbox-legacy-border-color: #3c3836 !important;
     --ytd-searchbox-legacy-border-shadow-color: #1d2021 !important;
@@ -1264,11 +1193,9 @@
     --ytd-searchbox-legacy-button-icon-color: #b8bb26 !important;
     --ytd-searchbox-background: #282828 !important;
     --ytd-searchbox-text-color: #ebdbb2 !important;
-    /* System icons */
     --yt-spec-icon-inactive: #ebdbb2 !important;
     --yt-spec-icon-disabled: #928374 !important;
     --yt-spec-brand-icon-inactive: #928374 !important;
-    /* Live chat */
     --yt-live-chat-background-color: #282828 !important;
     --yt-live-chat-primary-text-color: #ebdbb2 !important;
     --yt-live-chat-action-panel-background-color: #282828 !important;
@@ -1320,7 +1247,6 @@
     --yt-live-chat-action-panel-background-color-transparent: (null) !important;
     --paper-tooltip-background: #665c54 !important;
     --paper-tooltip-text-color: #ebdbb2 !important;
-    /* Links */
     --yt-endpoint-color: #ebdbb2 !important;
     --yt-endpoint-visited-color: #ebdbb2 !important;
     --yt-endpoint-hover-color: #b8bb26 !important;
@@ -1497,7 +1423,6 @@
   :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal {
     color: #ebdbb2;
     background-color: #3c3836;
-    /* Accent for filled-in thumbs up (like button) */
   }
   :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(3,3,3)"],
   :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal [fill="rgb(0,0,0)"],
@@ -1526,7 +1451,6 @@
   }
   :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text {
     color: #ebdbb2;
-    /* Accent for filled-in thumbs up (like button) */
   }
   :root:not([dark]) .yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text path[d="M3,11h3v10H3V11z M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11v10h10.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z"] {
     fill: #b8bb26;
@@ -1789,7 +1713,6 @@
   :root:not([dark]) .html5-video-player {
     color: #ebdbb2;
     background-color: #1d2021;
-    /* stats for nerds */
   }
   :root:not([dark]) .html5-video-player .ytp-swatch-background-color,
   :root:not([dark]) .html5-video-player .ytp-play-progress {
@@ -1842,7 +1765,6 @@
   }
   :root:not([dark]) #shorts-container {
     --yt-spec-static-overlay-text-primary: #ebdbb2;
-    /* Buy super thanks button */
   }
   :root:not([dark]) #shorts-container .YtwFactoidRendererLabel {
     color: #a89984;
@@ -2307,11 +2229,6 @@
   html[darker-dark-theme] {
     background-color: #282828 !important;
     color: #ebdbb2 !important;
-    /* Ambient mode */
-    /* Comment box */
-    /* Bottom bar */
-    /* Chips */
-    /* Buttons */
   }
   html[darker-dark-theme] #cinematics {
     mix-blend-mode: lighten;
@@ -2369,11 +2286,6 @@
   html {
     background-color: #282828 !important;
     color: #ebdbb2 !important;
-    /* Ambient mode */
-    /* Comment box */
-    /* Bottom bar */
-    /* Chips */
-    /* Buttons */
   }
   html #cinematics {
     mix-blend-mode: lighten;

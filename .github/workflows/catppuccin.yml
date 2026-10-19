@@ -1,0 +1,58 @@
+# Rebuild the Catppuccin-based themes every week and open a pull request when anything changed.
+name: Catppuccin update
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"   # Mondays 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild GitHub, YouTube and DuckDuckGo styles
+        working-directory: stylus/build
+        run: python build.py
+
+      - name: Rebuild Discord theme
+        working-directory: discord/build
+        run: python build.py
+
+      - name: Bump versions of changed themes
+        id: bump
+        run: |
+          {
+            echo "summary<<EOF"
+            python tools/bump_versions.py
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: catppuccin-update
+          delete-branch: true
+          commit-message: Update Catppuccin-based themes
+          title: Update Catppuccin-based themes
+          body: |
+            Weekly rebuild from Catppuccin's latest templates.
+
+            ```
+            ${{ steps.bump.outputs.summary }}
+            ```
+
+            Merge to publish; installed styles update on their next check.

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — GitHub
 @namespace    gruvbox-cove
-@version      1.0.1
+@version      1.0.2
 @description  Gruvbox dark, green accent, CaskaydiaCove interface and code, Cove Sans for READMEs, issues and comments. Set GitHub's theme to Dark default.
 @author       The Gruvbox Cove contributors
 @license      MIT
@@ -390,30 +390,21 @@
       --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
       --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
       --outline-focus: #83a598 solid 2px;
-      /* Feed Links */
-      /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-      /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
       --data-blue-color-emphasis: #b8bb26;
       --data-red-color-emphasis: #fb4934;
       --data-green-color-emphasis: #b8bb26;
-      /* Copilot Chat */
       --display-green-fgColor: #b8bb26;
       --display-teal-fgColor: #8ec07c;
       --display-purple-fgColor: #d3869b;
       --display-blue-fgColor: #83a598;
       --display-pink-fgColor: #d3869b;
       --display-gray-fgColor: #a89984;
-      /* docs.github.com */
       --color-fg-default: #ebdbb2;
       --color-canvas-default: #282828;
       --color-canvas-subtle: #1d2021;
       --tooltip-fgColor: #282828;
       --tooltip-bgColor: #928374;
-      /* Refined GitHub */
       --rgh-heat-color: #fe8019;
-      /* Header when logged out */
-      /* Pull request check in progress indicator */
-      /* Issue timeline icon */
     }
     [data-color-mode][data-color-mode="auto"][data-light-theme="light"] ::selection {
       background-color: #665c54;
@@ -495,7 +486,6 @@
     }
     [data-color-mode][data-color-mode="auto"][data-light-theme="light"] [class*="prc-Timeline-TimelineBadge"],
     [data-color-mode][data-color-mode="auto"][data-light-theme="light"] .TimelineItem-Badge {
-      /* Completed */
     }
     [data-color-mode][data-color-mode="auto"][data-light-theme="light"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
     [data-color-mode][data-color-mode="auto"][data-light-theme="light"] .TimelineItem-Badge path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
@@ -877,30 +867,21 @@
       --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
       --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
       --outline-focus: #83a598 solid 2px;
-      /* Feed Links */
-      /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-      /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
       --data-blue-color-emphasis: #b8bb26;
       --data-red-color-emphasis: #fb4934;
       --data-green-color-emphasis: #b8bb26;
-      /* Copilot Chat */
       --display-green-fgColor: #b8bb26;
       --display-teal-fgColor: #8ec07c;
       --display-purple-fgColor: #d3869b;
       --display-blue-fgColor: #83a598;
       --display-pink-fgColor: #d3869b;
       --display-gray-fgColor: #a89984;
-      /* docs.github.com */
       --color-fg-default: #ebdbb2;
       --color-canvas-default: #282828;
       --color-canvas-subtle: #1d2021;
       --tooltip-fgColor: #282828;
       --tooltip-bgColor: #928374;
-      /* Refined GitHub */
       --rgh-heat-color: #fe8019;
-      /* Header when logged out */
-      /* Pull request check in progress indicator */
-      /* Issue timeline icon */
     }
     [data-color-mode][data-color-mode="auto"][data-light-theme="dark"] ::selection {
       background-color: #665c54;
@@ -982,7 +963,6 @@
     }
     [data-color-mode][data-color-mode="auto"][data-light-theme="dark"] [class*="prc-Timeline-TimelineBadge"],
     [data-color-mode][data-color-mode="auto"][data-light-theme="dark"] .TimelineItem-Badge {
-      /* Completed */
     }
     [data-color-mode][data-color-mode="auto"][data-light-theme="dark"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
     [data-color-mode][data-color-mode="auto"][data-light-theme="dark"] .TimelineItem-Badge path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
@@ -1366,30 +1346,21 @@
       --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
       --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
       --outline-focus: #83a598 solid 2px;
-      /* Feed Links */
-      /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-      /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
       --data-blue-color-emphasis: #b8bb26;
       --data-red-color-emphasis: #fb4934;
       --data-green-color-emphasis: #b8bb26;
-      /* Copilot Chat */
       --display-green-fgColor: #b8bb26;
       --display-teal-fgColor: #8ec07c;
       --display-purple-fgColor: #d3869b;
       --display-blue-fgColor: #83a598;
       --display-pink-fgColor: #d3869b;
       --display-gray-fgColor: #a89984;
-      /* docs.github.com */
       --color-fg-default: #ebdbb2;
       --color-canvas-default: #282828;
       --color-canvas-subtle: #1d2021;
       --tooltip-fgColor: #282828;
       --tooltip-bgColor: #928374;
-      /* Refined GitHub */
       --rgh-heat-color: #fe8019;
-      /* Header when logged out */
-      /* Pull request check in progress indicator */
-      /* Issue timeline icon */
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="light"] ::selection {
       background-color: #665c54;
@@ -1471,7 +1442,6 @@
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="light"] [class*="prc-Timeline-TimelineBadge"],
     [data-color-mode][data-color-mode="auto"][data-dark-theme="light"] .TimelineItem-Badge {
-      /* Completed */
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="light"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
     [data-color-mode][data-color-mode="auto"][data-dark-theme="light"] .TimelineItem-Badge path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
@@ -1853,30 +1823,21 @@
       --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
       --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
       --outline-focus: #83a598 solid 2px;
-      /* Feed Links */
-      /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-      /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
       --data-blue-color-emphasis: #b8bb26;
       --data-red-color-emphasis: #fb4934;
       --data-green-color-emphasis: #b8bb26;
-      /* Copilot Chat */
       --display-green-fgColor: #b8bb26;
       --display-teal-fgColor: #8ec07c;
       --display-purple-fgColor: #d3869b;
       --display-blue-fgColor: #83a598;
       --display-pink-fgColor: #d3869b;
       --display-gray-fgColor: #a89984;
-      /* docs.github.com */
       --color-fg-default: #ebdbb2;
       --color-canvas-default: #282828;
       --color-canvas-subtle: #1d2021;
       --tooltip-fgColor: #282828;
       --tooltip-bgColor: #928374;
-      /* Refined GitHub */
       --rgh-heat-color: #fe8019;
-      /* Header when logged out */
-      /* Pull request check in progress indicator */
-      /* Issue timeline icon */
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] ::selection {
       background-color: #665c54;
@@ -1958,7 +1919,6 @@
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] [class*="prc-Timeline-TimelineBadge"],
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] .TimelineItem-Badge {
-      /* Completed */
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] .TimelineItem-Badge path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
@@ -2340,30 +2300,21 @@
       --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
       --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
       --outline-focus: #83a598 solid 2px;
-      /* Feed Links */
-      /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-      /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
       --data-blue-color-emphasis: #b8bb26;
       --data-red-color-emphasis: #fb4934;
       --data-green-color-emphasis: #b8bb26;
-      /* Copilot Chat */
       --display-green-fgColor: #b8bb26;
       --display-teal-fgColor: #8ec07c;
       --display-purple-fgColor: #d3869b;
       --display-blue-fgColor: #83a598;
       --display-pink-fgColor: #d3869b;
       --display-gray-fgColor: #a89984;
-      /* docs.github.com */
       --color-fg-default: #ebdbb2;
       --color-canvas-default: #282828;
       --color-canvas-subtle: #1d2021;
       --tooltip-fgColor: #282828;
       --tooltip-bgColor: #928374;
-      /* Refined GitHub */
       --rgh-heat-color: #fe8019;
-      /* Header when logged out */
-      /* Pull request check in progress indicator */
-      /* Issue timeline icon */
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] header[data-color-mode] ::selection {
       background-color: #665c54;
@@ -2445,7 +2396,6 @@
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] header[data-color-mode] [class*="prc-Timeline-TimelineBadge"],
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] header[data-color-mode] .TimelineItem-Badge {
-      /* Completed */
     }
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] header[data-color-mode] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
     [data-color-mode][data-color-mode="auto"][data-dark-theme="dark"] header[data-color-mode] .TimelineItem-Badge path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
@@ -2829,30 +2779,21 @@
     --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
     --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
     --outline-focus: #83a598 solid 2px;
-    /* Feed Links */
-    /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-    /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
     --data-blue-color-emphasis: #b8bb26;
     --data-red-color-emphasis: #fb4934;
     --data-green-color-emphasis: #b8bb26;
-    /* Copilot Chat */
     --display-green-fgColor: #b8bb26;
     --display-teal-fgColor: #8ec07c;
     --display-purple-fgColor: #d3869b;
     --display-blue-fgColor: #83a598;
     --display-pink-fgColor: #d3869b;
     --display-gray-fgColor: #a89984;
-    /* docs.github.com */
     --color-fg-default: #ebdbb2;
     --color-canvas-default: #282828;
     --color-canvas-subtle: #1d2021;
     --tooltip-fgColor: #282828;
     --tooltip-bgColor: #928374;
-    /* Refined GitHub */
     --rgh-heat-color: #fe8019;
-    /* Header when logged out */
-    /* Pull request check in progress indicator */
-    /* Issue timeline icon */
   }
   [data-color-mode="light"][data-light-theme="dark"] ::selection,
   [data-color-mode="dark"][data-dark-theme="dark"] ::selection {
@@ -2964,7 +2905,6 @@
   [data-color-mode="dark"][data-dark-theme="dark"] [class*="prc-Timeline-TimelineBadge"],
   [data-color-mode="light"][data-light-theme="dark"] .TimelineItem-Badge,
   [data-color-mode="dark"][data-dark-theme="dark"] .TimelineItem-Badge {
-    /* Completed */
   }
   [data-color-mode="light"][data-light-theme="dark"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
   [data-color-mode="dark"][data-dark-theme="dark"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
@@ -3355,30 +3295,21 @@
     --shadow-floating-xlarge: 0px 0px 0px 1px #3c3836, 0px 32px 64px 0px #1d2021;
     --shadow-floating-legacy: 0px 6px 12px -3px #1d2021, 0px 6px 18px 0px #1d2021;
     --outline-focus: #83a598 solid 2px;
-    /* Feed Links */
-    /* Customer Terms & Agreements Page: https://github.com/customer-terms */
-    /* Enhanced Repo Insights Views - https://github.com/orgs/community/discussions/135572 */
     --data-blue-color-emphasis: #b8bb26;
     --data-red-color-emphasis: #fb4934;
     --data-green-color-emphasis: #b8bb26;
-    /* Copilot Chat */
     --display-green-fgColor: #b8bb26;
     --display-teal-fgColor: #8ec07c;
     --display-purple-fgColor: #d3869b;
     --display-blue-fgColor: #83a598;
     --display-pink-fgColor: #d3869b;
     --display-gray-fgColor: #a89984;
-    /* docs.github.com */
     --color-fg-default: #ebdbb2;
     --color-canvas-default: #282828;
     --color-canvas-subtle: #1d2021;
     --tooltip-fgColor: #282828;
     --tooltip-bgColor: #928374;
-    /* Refined GitHub */
     --rgh-heat-color: #fe8019;
-    /* Header when logged out */
-    /* Pull request check in progress indicator */
-    /* Issue timeline icon */
   }
   [data-color-mode="light"][data-light-theme="light"] ::selection,
   [data-color-mode="dark"][data-dark-theme="light"] ::selection {
@@ -3490,7 +3421,6 @@
   [data-color-mode="dark"][data-dark-theme="light"] [class*="prc-Timeline-TimelineBadge"],
   [data-color-mode="light"][data-light-theme="light"] .TimelineItem-Badge,
   [data-color-mode="dark"][data-dark-theme="light"] .TimelineItem-Badge {
-    /* Completed */
   }
   [data-color-mode="light"][data-light-theme="light"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],
   [data-color-mode="dark"][data-dark-theme="light"] [class*="prc-Timeline-TimelineBadge"] path[d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm1.5 0a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm10.28-1.72-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l1.47 1.47 3.97-3.97a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"],

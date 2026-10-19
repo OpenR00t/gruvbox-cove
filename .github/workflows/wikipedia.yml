@@ -1,0 +1,26 @@
+# Copy the Wikipedia theme to the account's global.css on Meta-Wiki whenever it changes.
+name: Wikipedia sync
+
+on:
+  push:
+    branches: [main]
+    paths: [wikipedia/gruvbox-wikipedia.css]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: ${{ vars.WIKI_SYNC == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Upload to Meta-Wiki
+        env:
+          WIKI_USER: ${{ secrets.WIKI_USER }}
+          WIKI_BOT_PASSWORD: ${{ secrets.WIKI_BOT_PASSWORD }}
+        run: python tools/wiki_sync.py
