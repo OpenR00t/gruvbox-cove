@@ -47,8 +47,10 @@ Install from GitHub and the managers update themselves; each theme's version is 
 - **Old reddit userscript**: same, from `reddit/reddit-auto-show-images.user.js` with Tampermonkey or Violentmonkey.
 - **Old reddit stylesheet**: install `reddit/gruvbox-old-reddit.user.css` in Stylus like the other styles (RES's
   "Load Stylesheets" URL option doesn't reliably apply outside stylesheets on old reddit).
-- **Vencord**: add `https://cdn.jsdelivr.net/gh/<owner>/gruvbox-cove@main/discord/gruvbox-cove.theme.css` under
-  Settings → Themes → Online Themes (same caching), or copy the file into the themes folder.
+- **Vencord**: with GitHub Pages enabled for the repository (Settings → Pages → deploy from `main`, root), add
+  `https://<owner>.github.io/gruvbox-cove/discord/gruvbox-cove.theme.css` under Settings → Themes → Online Themes.
+  Pages serves it as CSS and lets clients recheck after 10 minutes, so a push shows up on the next reload (Ctrl+R).
+  Raw GitHub links don't work here (served as plain text), and jsDelivr lets clients cache for 7 days.
 
 Automations in `.github/workflows/`:
 - **Catppuccin update** (weekly): rebuilds the GitHub, YouTube, DuckDuckGo and Discord themes from Catppuccin's latest

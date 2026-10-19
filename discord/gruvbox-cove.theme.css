@@ -1,7 +1,7 @@
 /**
  * @name Gruvbox Cove
  * @author The Gruvbox Cove contributors
- * @version 1.0.3
+ * @version 1.0.4
  * @description Gruvbox dark for Discord: green accent, CaskaydiaCove interface, Cove Sans Light messages. Built from Catppuccin's Discord theme (MIT).
  * @license MIT
 **/
@@ -1921,6 +1921,11 @@
 }
 :is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"]) :is(strong, b) {
   font-weight: 700 !important;
+}
+/* Message bodies one step smaller than Discord's 1rem (15px at the default chat font scale; still follows Discord's
+   font-scaling setting). Embeds and reply previews keep their own smaller sizes. */
+:is([id^="message-content-"], [class*="messageContent"]) {
+  font-size: 0.9375rem !important;
 }
 /* ...code and headings inside messages stay mono */
 :is([id^="message-content-"], [class*="messageContent"]) :is(code, pre, pre *, h1, h2, h3), [class*="markup"] :is(code, pre), .hljs {
