@@ -12,14 +12,21 @@
   --font-headline: var(--gbc-mono) !important;
   --font-code: var(--gbc-mono) !important;
 }
-/* Prose: message text, embed descriptions, forum/thread previews -> Cove Sans SemiLight */
-[class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
-[class*="threadMessageAccessoryContent"], [class*="repliedTextContent"] {
+/* Prose: message text, embed descriptions, forum/thread previews -> Cove Sans SemiLight.
+   Message bodies are matched by their id (message-content-<id>), which survives Discord's class renames;
+   the text sits in child spans that Discord gives its own font, so children are set too. */
+:is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
+    [class*="threadMessageAccessoryContent"], [class*="repliedTextContent"]),
+:is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
+    [class*="threadMessageAccessoryContent"], [class*="repliedTextContent"]) *:not(code):not(pre):not(pre *):not(h1):not(h2):not(h3):not(strong):not(b) {
   font-family: var(--gbc-read) !important;
-  font-weight: 350;
+  font-weight: 350 !important;
+}
+:is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"]) :is(strong, b) {
+  font-weight: 700 !important;
 }
 /* ...code and headings inside messages stay mono */
-[class*="messageContent"] :is(code, pre, h1, h2, h3), [class*="markup"] :is(code, pre), .hljs {
+:is([id^="message-content-"], [class*="messageContent"]) :is(code, pre, pre *, h1, h2, h3), [class*="markup"] :is(code, pre), .hljs {
   font-family: var(--gbc-mono) !important;
 }
 
