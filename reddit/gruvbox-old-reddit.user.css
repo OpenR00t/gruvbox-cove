@@ -1,18 +1,15 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — old reddit
 @namespace    gruvbox-cove
-@version      2.0.1
+@version      2.0.2
 @description  Gruvbox dark for the old reddit interface (old.reddit.com, or reddit.com with the account set to old reddit) with RES: green accent, CaskaydiaCove interface, Cove Sans SemiLight posts and comments. Turn on RES "Ignore subreddit styles".
 @author       The Gruvbox Cove contributors
 @license      AGPL-3.0-or-later
 ==/UserStyle== */
-/* Built from reddit/gruvbox-old-reddit.css by tools/build_reddit_usercss.py; edit that file instead. */
-
 @-moz-document domain("reddit.com") {
   /* =========================================================
-     Gruvbox Dark for old.reddit.com  (v2: green accent, readability pass)
-     Paste into: RES Settings > Appearance > Stylesheet Loader
-                 > Snippets (Apply to: Everywhere)
+     Gruvbox Dark for the old reddit interface (with RES)
+     Install in Stylus from the repo so it updates itself.
      ========================================================= */
   /* SPDX-License-Identifier: AGPL-3.0-or-later
      Copyright (C) 2026 The Gruvbox Cove contributors */

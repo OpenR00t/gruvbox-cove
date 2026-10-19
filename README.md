@@ -31,7 +31,7 @@ primary accent (yellow only for warnings and types), and one type family:
 | [`halloy/`](halloy/) | Halloy IRC theme + config snippet | See [`halloy/README.md`](halloy/README.md) |
 | [`steam/`](steam/) | Steam palette and fonts for Millennium's Material theme | See [`steam/README.md`](steam/README.md) |
 | [`stylus/`](stylus/) | GitHub, YouTube, DuckDuckGo styles and a global font style | Stylus → Write new style → paste |
-| [`reddit/`](reddit/) | Old reddit theme (with RES), auto-expand userscript | Stylus (`.user.css`) or an RES snippet (`.css`); userscript manager |
+| [`reddit/`](reddit/) | Old reddit theme (with RES), auto-expand userscript | Stylus; userscript manager |
 | [`wikipedia/`](wikipedia/) | Wikipedia (Vector 2022) theme | Paste into `meta.wikimedia.org/wiki/Special:MyPage/global.css` |
 | [`fonts/`](fonts/) | Cove Sans (12 styles) and its build scripts | Install the `.ttf` files |
 
@@ -45,9 +45,8 @@ Install from GitHub and the managers update themselves; each theme's version is 
 - **Stylus styles**: open the `.user.css` file on GitHub, click **Raw**, and Stylus offers to install it. Stylus then
   checks that address for newer versions on its own (Manage → Check for updates to force it).
 - **Old reddit userscript**: same, from `reddit/reddit-auto-show-images.user.js` with Tampermonkey or Violentmonkey.
-- **Old reddit stylesheet**: install `reddit/gruvbox-old-reddit.user.css` in Stylus like the other styles. RES's
-  "Load Stylesheets" URL option doesn't reliably apply outside stylesheets on old reddit. `gruvbox-old-reddit.css` is the source
-  and still works pasted as an RES snippet; after editing it, run `python tools/build_reddit_usercss.py`.
+- **Old reddit stylesheet**: install `reddit/gruvbox-old-reddit.user.css` in Stylus like the other styles (RES's
+  "Load Stylesheets" URL option doesn't reliably apply outside stylesheets on old reddit).
 - **Vencord**: add `https://cdn.jsdelivr.net/gh/<owner>/gruvbox-cove@main/discord/gruvbox-cove.theme.css` under
   Settings → Themes → Online Themes (same caching), or copy the file into the themes folder.
 
