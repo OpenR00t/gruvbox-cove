@@ -1,0 +1,25 @@
+// Merge into Windows Terminal settings.json (Settings → Open JSON file, bottom-left).
+// The color scheme itself arrives through the fragment file, so only these are needed.
+{
+  "theme": "Gruvbox Cove",
+  "themes": [
+    {
+      "name": "Gruvbox Cove",
+      "window": { "applicationTheme": "dark", "useMica": false },
+      "tabRow": { "background": "#1D2021FF", "unfocusedBackground": "#1D2021FF" },
+      "tab": {
+        "background": "#282828FF",
+        "unfocusedBackground": "#1D2021FF",
+        "showCloseButton": "hover"
+      }
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Gruvbox Cove",
+      "cursorShape": "bar",
+      "padding": "10"
+      // font: you set this yourself → "CaskaydiaCove Nerd Font Mono"
+    }
+  }
+}

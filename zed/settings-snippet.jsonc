@@ -1,0 +1,10 @@
+// Merge into %APPDATA%\Zed\settings.json (Zed → Settings → Open Settings File, or Ctrl+,)
+{
+  "theme": { "mode": "dark", "light": "Gruvbox Cove", "dark": "Gruvbox Cove" },
+  "buffer_font_family": "CaskaydiaCove Nerd Font",
+  "buffer_font_features": { "calt": true },          // Cascadia ligatures
+  "buffer_font_size": 15,
+  "ui_font_family": "CaskaydiaCove Nerd Font",       // the font rule: interface in mono
+  "ui_font_size": 15,
+  "terminal": { "font_family": "CaskaydiaCove Nerd Font Mono" }
+}

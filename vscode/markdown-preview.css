@@ -1,0 +1,5 @@
+/* VS Code Markdown preview: prose in Cove Sans SemiLight (350).
+   settings.json:  "markdown.styles": ["file:///<path to this repo>/vscode/markdown-preview.css"]
+   SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 The Gruvbox Cove contributors */
+body :is(p, li, blockquote, td, dd) { font-weight: 350; }

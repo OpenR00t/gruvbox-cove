@@ -1,0 +1,40 @@
+/* SPDX-License-Identifier: MIT
+   Copyright (c) 2022 Catppuccin
+   Copyright (c) 2026 The Gruvbox Cove contributors */
+
+/* ---------- Gruvbox Cove font rule ---------- */
+:root, .visual-refresh {
+  --gbc-mono: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+  --gbc-read: "Cove Sans", "Segoe UI", sans-serif;
+  /* Discord's own font stacks: interface and headings mono, code mono */
+  --font-primary: var(--gbc-mono) !important;
+  --font-display: var(--gbc-mono) !important;
+  --font-headline: var(--gbc-mono) !important;
+  --font-code: var(--gbc-mono) !important;
+}
+/* Prose: message text, embed descriptions, forum/thread previews -> Cove Sans SemiLight */
+[class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
+[class*="threadMessageAccessoryContent"], [class*="repliedTextContent"] {
+  font-family: var(--gbc-read) !important;
+  font-weight: 350;
+}
+/* ...code and headings inside messages stay mono */
+[class*="messageContent"] :is(code, pre, h1, h2, h3), [class*="markup"] :is(code, pre), .hljs {
+  font-family: var(--gbc-mono) !important;
+}
+
+/* ---------- Code blocks: gruvbox syntax (same as VS Code / Neovim) ---------- */
+.hljs { color: #ebdbb2; background: #1d2021; }
+.hljs-comment, .hljs-quote { color: #928374; font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-section, .hljs-doctag { color: #fb4934; }
+.hljs-string, .hljs-regexp + .hljs-string, .hljs-addition { color: #b8bb26; }
+.hljs-title, .hljs-title.function_, .hljs-function .hljs-title { color: #b8bb26; font-weight: bold; }
+.hljs-number, .hljs-literal, .hljs-symbol, .hljs-bullet { color: #d3869b; }
+.hljs-type, .hljs-title.class_, .hljs-class .hljs-title, .hljs-attr, .hljs-attribute, .hljs-selector-attr { color: #fabd2f; }
+.hljs-built_in, .hljs-regexp, .hljs-template-variable, .hljs-operator { color: #fe8019; }
+.hljs-meta, .hljs-name, .hljs-tag, .hljs-selector-class, .hljs-selector-id, .hljs-template-tag { color: #8ec07c; }
+.hljs-variable, .hljs-property, .hljs-link { color: #83a598; }
+.hljs-params, .hljs-subst { color: #d5c4a1; }
+.hljs-deletion { color: #fb4934; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }

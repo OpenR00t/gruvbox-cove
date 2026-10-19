@@ -1,0 +1,23 @@
+{
+  "name": "gruvbox-cove",
+  "displayName": "Gruvbox Cove",
+  "description": "Gruvbox dark with a green accent; part of the Gruvbox Cove theme set.",
+  "version": "1.0.0",
+  "publisher": "gruvbox-cove",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Gruvbox Cove",
+        "uiTheme": "vs-dark",
+        "path": "./themes/gruvbox-cove-color-theme.json"
+      }
+    ]
+  },
+  "license": "AGPL-3.0-or-later"
+}

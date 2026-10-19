@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 The Gruvbox Cove contributors
+# Merge into %AppData%\halloy\config.toml.  `theme` is a root key: put it above every [section].
+theme = "gruvbox-cove"
+
+[font]
+family = "CaskaydiaCove Nerd Font Mono"   # chat is a grid of nicks and timestamps: mono everywhere
+size = 13
+
+# Nick colors from the gruvbox palette instead of random hues
+[buffer.nickname]
+color = { palette = ["#8ec07c", "#83a598", "#d3869b", "#fabd2f", "#fe8019", "#b8bb26", "#bdae93", "#689d6a"] }

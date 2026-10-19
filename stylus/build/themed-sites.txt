@@ -1,0 +1,11 @@
+# Sites with their own Gruvbox Cove style. The global fonts style skips them (their style applies the font rule itself).
+# One domain per line; subdomains are included. Keep a private, git-ignored list in ../../private/themed-sites.txt.
+reddit.com
+youtube.com
+github.com
+duckduckgo.com
+duck.ai
+wikipedia.org
+wikimedia.org
+wiktionary.org
+mediawiki.org

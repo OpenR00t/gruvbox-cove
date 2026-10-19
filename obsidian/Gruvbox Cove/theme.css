@@ -1,0 +1,426 @@
+/* =========================================================
+   Gruvbox Cove — Obsidian theme
+   Same palette, roles and fonts as the rest of Gruvbox Cove. Green is the primary accent; yellow
+   only means "warning". CaskaydiaCove for interface, editing, headings
+   and code; Cove Sans for reading view.
+
+   Install: copy this folder to <vault>/.obsidian/themes/Gruvbox Cove/
+   Select it in Settings > Appearance > Themes.
+   ========================================================= */
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 The Gruvbox Cove contributors */
+
+/* ---------- Palette: dark (main) ---------- */
+.theme-dark {
+  --gb-bg-h:   #1d2021;
+  --gb-bg0:    #282828;
+  --gb-bg1:    #3c3836;
+  --gb-bg2:    #504945;
+  --gb-bg3:    #665c54;
+  --gb-bg4:    #7c6f64;
+  --gb-fg0:    #fbf1c7;
+  --gb-fg:     #ebdbb2;
+  --gb-fg2:    #d5c4a1;
+  --gb-fg3:    #bdae93;
+  --gb-fg4:    #a89984;
+  --gb-gray:   #928374;
+  --gb-red:    #fb4934;
+  --gb-green:  #b8bb26;
+  --gb-yellow: #fabd2f;
+  --gb-blue:   #83a598;
+  --gb-purple: #d3869b;
+  --gb-aqua:   #8ec07c;
+  --gb-orange: #fe8019;
+  --gb-green-d:  #98971a;
+  --gb-aqua-d:   #689d6a;
+  --gb-blue-d:   #458588;
+  --gb-purple-d: #b16286;
+
+  --gb-red-rgb:    251, 73, 52;
+  --gb-orange-rgb: 254, 128, 25;
+  --gb-yellow-rgb: 250, 189, 47;
+  --gb-green-rgb:  184, 187, 38;
+  --gb-aqua-rgb:   142, 192, 124;
+  --gb-blue-rgb:   131, 165, 152;
+  --gb-purple-rgb: 211, 134, 155;
+  --gb-gray-rgb:   146, 131, 116;
+
+  /* Obsidian derives --color-accent from these: green #b8bb26 */
+  --accent-h: 61;
+  --accent-s: 66%;
+  --accent-l: 44%;
+
+  --gb-mark: rgba(184, 187, 38, 0.28);
+  --gb-shadow: rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+/* ---------- Palette: light (Gruvbox light, same roles) ---------- */
+.theme-light {
+  --gb-bg-h:   #f9f5d7;
+  --gb-bg0:    #fbf1c7;
+  --gb-bg1:    #ebdbb2;
+  --gb-bg2:    #d5c4a1;
+  --gb-bg3:    #bdae93;
+  --gb-bg4:    #a89984;
+  --gb-fg0:    #282828;
+  --gb-fg:     #3c3836;
+  --gb-fg2:    #504945;
+  --gb-fg3:    #665c54;
+  --gb-fg4:    #7c6f64;
+  --gb-gray:   #928374;
+  --gb-red:    #9d0006;
+  --gb-green:  #79740e;
+  --gb-yellow: #b57614;
+  --gb-blue:   #076678;
+  --gb-purple: #8f3f71;
+  --gb-aqua:   #427b58;
+  --gb-orange: #af3a03;
+  --gb-green-d:  #98971a;
+  --gb-aqua-d:   #689d6a;
+  --gb-blue-d:   #458588;
+  --gb-purple-d: #b16286;
+
+  --gb-red-rgb:    157, 0, 6;
+  --gb-orange-rgb: 175, 58, 3;
+  --gb-yellow-rgb: 181, 118, 20;
+  --gb-green-rgb:  121, 116, 14;
+  --gb-aqua-rgb:   66, 123, 88;
+  --gb-blue-rgb:   7, 102, 120;
+  --gb-purple-rgb: 143, 63, 113;
+  --gb-gray-rgb:   146, 131, 116;
+
+  /* green #79740e */
+  --accent-h: 57;
+  --accent-s: 79%;
+  --accent-l: 26%;
+
+  --gb-mark: rgba(121, 116, 14, 0.22);
+  --gb-shadow: rgba(60, 56, 54, 0.25);
+  color-scheme: light;
+}
+
+/* ---------- Roles (shared by both modes) ---------- */
+.theme-dark,
+.theme-light {
+  --gb-accent:   var(--gb-green);
+  --gb-accent-2: var(--gb-aqua);
+  --gb-font: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+  --gb-read-font: "Cove Sans", "Segoe UI", sans-serif;
+
+  /* Typography — see "Theming - Typography" */
+  --font-interface-theme: var(--gb-font);
+  --font-text-theme: var(--gb-font);
+  --font-monospace-theme: var(--gb-font);
+  --line-height-normal: 1.6;
+  --line-height-tight: 1.4;
+  --file-line-width: 90ch;
+  --bold-color: var(--gb-fg0);
+  --bold-weight: 700;
+
+  /* Named colors Obsidian uses everywhere */
+  --color-red-rgb: var(--gb-red-rgb);
+  --color-orange-rgb: var(--gb-orange-rgb);
+  --color-yellow-rgb: var(--gb-yellow-rgb);
+  --color-green-rgb: var(--gb-green-rgb);
+  --color-cyan-rgb: var(--gb-aqua-rgb);
+  --color-blue-rgb: var(--gb-blue-rgb);
+  --color-purple-rgb: var(--gb-purple-rgb);
+  --color-pink-rgb: var(--gb-purple-rgb);
+  --color-red: var(--gb-red);
+  --color-orange: var(--gb-orange);
+  --color-yellow: var(--gb-yellow);
+  --color-green: var(--gb-green);
+  --color-cyan: var(--gb-aqua);
+  --color-blue: var(--gb-blue);
+  --color-purple: var(--gb-purple);
+  --color-pink: var(--gb-purple);
+
+  /* Surfaces — see "Theming - Gruvbox palette and roles" */
+  --background-primary: var(--gb-bg0);
+  --background-primary-alt: var(--gb-bg-h);
+  --background-secondary: var(--gb-bg-h);
+  --background-secondary-alt: var(--gb-bg0);
+  --background-modifier-hover: var(--gb-bg1);
+  --background-modifier-active-hover: var(--gb-bg2);
+  --background-modifier-border: var(--gb-bg2);
+  --background-modifier-border-hover: var(--gb-bg3);
+  --background-modifier-border-focus: var(--gb-accent);
+  --background-modifier-form-field: var(--gb-bg-h);
+  --background-modifier-form-field-highlighted: var(--gb-bg-h);
+  --background-modifier-message: var(--gb-bg1);
+  --background-modifier-error: var(--gb-red);
+  --background-modifier-error-hover: var(--gb-red);
+  --background-modifier-success: var(--gb-green-d);
+  --background-modifier-cover: rgba(29, 32, 33, 0.7);
+  --divider-color: var(--gb-bg1);
+  --divider-color-hover: var(--gb-accent);
+  --titlebar-background: var(--gb-bg-h);
+  --titlebar-background-focused: var(--gb-bg-h);
+  --titlebar-text-color: var(--gb-fg4);
+  --titlebar-text-color-focused: var(--gb-fg3);
+  --ribbon-background: var(--gb-bg-h);
+  --ribbon-background-collapsed: var(--gb-bg-h);
+  --tab-container-background: var(--gb-bg-h);
+  --status-bar-background: var(--gb-bg-h);
+  --status-bar-border-color: var(--gb-bg1);
+  --status-bar-text-color: var(--gb-gray);
+  --modal-background: var(--gb-bg0);
+  --modal-border-color: var(--gb-bg2);
+  --prompt-border-color: var(--gb-bg2);
+  --shadow-s: 0 1px 4px var(--gb-shadow);
+  --shadow-l: 0 4px 16px var(--gb-shadow);
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: var(--gb-bg3);
+  --scrollbar-active-thumb-bg: var(--gb-bg4);
+
+  /* Text */
+  --text-normal: var(--gb-fg);
+  --text-muted: var(--gb-fg4);
+  --text-faint: var(--gb-gray);
+  --text-on-accent: var(--gb-bg-h);
+  --text-on-accent-inverted: var(--gb-fg0);
+  --text-accent: var(--gb-accent);
+  --text-accent-hover: var(--gb-accent-2);
+  --text-error: var(--gb-red);
+  --text-warning: var(--gb-yellow);
+  --text-success: var(--gb-green);
+  --text-selection: var(--gb-bg3);
+  --text-highlight-bg: var(--gb-mark);
+  --text-highlight-bg-active: var(--gb-mark);
+  --caret-color: var(--gb-accent);
+
+  /* Controls */
+  --interactive-normal: var(--gb-bg1);
+  --interactive-hover: var(--gb-bg2);
+  --interactive-accent: var(--gb-green-d);
+  --interactive-accent-hover: var(--gb-green);
+  --toggle-thumb-color: var(--gb-fg0);
+  --slider-track-background: var(--gb-bg2);
+  --slider-thumb-border-color: var(--gb-accent);
+  --input-radius: 4px;
+  --button-radius: 4px;
+
+  /* Links: blue, hover aqua, external aqua, missing red */
+  --link-color: var(--gb-blue);
+  --link-color-hover: var(--gb-aqua);
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-external-color: var(--gb-aqua);
+  --link-external-color-hover: var(--gb-green);
+  --link-external-decoration: none;
+  --link-unresolved-color: var(--gb-red);
+  --link-unresolved-opacity: 0.85;
+  --link-unresolved-decoration-style: dotted;
+  --link-unresolved-decoration-color: rgba(var(--gb-red-rgb), 0.5);
+
+  /* Headings: same ladder as Wikipedia */
+  --inline-title-color: var(--gb-fg0);
+  --h1-color: var(--gb-fg0);
+  --h2-color: var(--gb-accent);
+  --h3-color: var(--gb-aqua);
+  --h4-color: var(--gb-blue);
+  --h5-color: var(--gb-fg3);
+  --h6-color: var(--gb-gray);
+  --h1-font: var(--gb-font);
+  --h2-font: var(--gb-font);
+  --h3-font: var(--gb-font);
+  --h4-font: var(--gb-font);
+  --h5-font: var(--gb-font);
+  --h6-font: var(--gb-font);
+
+  /* Tags: chip, like reddit flair */
+  --tag-color: var(--gb-aqua);
+  --tag-color-hover: var(--gb-green);
+  --tag-background: var(--gb-bg1);
+  --tag-background-hover: var(--gb-bg2);
+  --tag-border-width: 0px;
+  --tag-radius: 3px;
+  --tag-padding-x: 6px;
+
+  /* Code: inline orange on bg1 (set below), blocks on bg0_h */
+  --code-background: var(--gb-bg-h);
+  --code-normal: var(--gb-fg2);
+  --code-comment: var(--gb-gray);
+  --code-function: var(--gb-aqua);
+  --code-keyword: var(--gb-red);
+  --code-string: var(--gb-green);
+  --code-value: var(--gb-purple);
+  --code-tag: var(--gb-blue);
+  --code-property: var(--gb-blue);
+  --code-operator: var(--gb-orange);
+  --code-punctuation: var(--gb-fg4);
+  --code-important: var(--gb-orange);
+  --code-radius: 6px;
+
+  /* Quotes, tables, rules, embeds */
+  --blockquote-border-color: var(--gb-bg3);
+  --blockquote-border-thickness: 3px;
+  --blockquote-color: var(--gb-fg3);
+  --table-header-background: var(--gb-bg1);
+  --table-header-background-hover: var(--gb-bg2);
+  --table-header-color: var(--gb-fg0);
+  --table-border-color: var(--gb-bg2);
+  --table-row-alt-background: var(--gb-bg-h);
+  --table-row-background-hover: var(--gb-bg1);
+  --table-selection: var(--gb-mark);
+  --hr-color: var(--gb-bg2);
+  --embed-border-start: 2px solid var(--gb-bg3);
+
+  /* Checkboxes */
+  --checkbox-color: var(--gb-green-d);
+  --checkbox-color-hover: var(--gb-green);
+  --checkbox-border-color: var(--gb-bg4);
+  --checkbox-border-color-hover: var(--gb-accent);
+  --checkbox-marker-color: var(--gb-bg-h);
+  --checklist-done-color: var(--gb-gray);
+  --checklist-done-decoration: line-through;
+
+  /* File explorer, outline, other side panes */
+  --nav-item-color: var(--gb-fg3);
+  --nav-item-color-hover: var(--gb-fg0);
+  --nav-item-color-active: var(--gb-accent);
+  --nav-item-color-selected: var(--gb-fg0);
+  --nav-item-background-hover: var(--gb-bg1);
+  --nav-item-background-active: var(--gb-bg1);
+  --nav-item-background-selected: var(--gb-bg2);
+  --nav-collapse-icon-color: var(--gb-bg4);
+  --nav-indentation-guide-color: var(--gb-bg2);
+  --icon-color: var(--gb-fg4);
+  --icon-color-hover: var(--gb-fg);
+  --icon-color-active: var(--gb-accent);
+  --icon-color-focused: var(--gb-fg0);
+
+  /* Tabs */
+  --tab-text-color: var(--gb-gray);
+  --tab-text-color-focused: var(--gb-fg4);
+  --tab-text-color-active: var(--gb-fg3);
+  --tab-text-color-focused-active: var(--gb-fg0);
+  --tab-text-color-focused-active-current: var(--gb-fg0);
+  --tab-background-active: var(--gb-bg0);
+  --tab-divider-color: var(--gb-bg1);
+  --tab-outline-color: var(--gb-bg1);
+
+  /* Graph: notes tan, focus green, tags aqua, files blue, missing red */
+  --graph-line: var(--gb-bg2);
+  --graph-node: var(--gb-fg4);
+  --graph-node-focused: var(--gb-accent);
+  --graph-node-tag: var(--gb-aqua);
+  --graph-node-attachment: var(--gb-blue);
+  --graph-node-unresolved: var(--gb-red);
+  --graph-text: var(--gb-fg3);
+
+  /* Canvas: colors 1-6 = red, orange, yellow, green, aqua, purple */
+  --canvas-background: var(--gb-bg-h);
+  --canvas-dot-pattern: var(--gb-bg2);
+  --canvas-card-label-color: var(--gb-fg4);
+  --canvas-color-1: var(--gb-red-rgb);
+  --canvas-color-2: var(--gb-orange-rgb);
+  --canvas-color-3: var(--gb-yellow-rgb);
+  --canvas-color-4: var(--gb-green-rgb);
+  --canvas-color-5: var(--gb-aqua-rgb);
+  --canvas-color-6: var(--gb-purple-rgb);
+
+  /* Callouts: info blue, tips/abstract aqua, success/important green,
+     questions purple, warnings orange, failures red, quotes gray.
+     Yellow is not used (it means warning everywhere else). */
+  --callout-default: var(--gb-blue-rgb);
+  --callout-info: var(--gb-blue-rgb);
+  --callout-todo: var(--gb-blue-rgb);
+  --callout-summary: var(--gb-aqua-rgb);
+  --callout-tip: var(--gb-aqua-rgb);
+  --callout-success: var(--gb-green-rgb);
+  --callout-important: var(--gb-green-rgb);
+  --callout-question: var(--gb-purple-rgb);
+  --callout-example: var(--gb-purple-rgb);
+  --callout-warning: var(--gb-orange-rgb);
+  --callout-fail: var(--gb-red-rgb);
+  --callout-error: var(--gb-red-rgb);
+  --callout-bug: var(--gb-red-rgb);
+  --callout-quote: var(--gb-gray-rgb);
+  --callout-radius: 6px;
+}
+
+/* ---------- Rules variables can't reach ---------- */
+
+/* Reading view (and hover previews / embeds): prose in Cove Sans.
+   Headings (--hN-font) and code (--font-monospace) stay CaskaydiaCove. */
+.markdown-preview-view {
+  --font-text: var(--gb-read-font);
+}
+/* Prose weight in reading view: Cove Sans SemiLight (350); bold keeps its weight */
+.markdown-preview-view :is(p, li, blockquote, td, dd, figcaption) {
+  font-weight: 350;
+}
+
+/* Inline code: orange on bg1, like the reddit and Wikipedia themes */
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting) {
+  color: var(--gb-orange);
+  background-color: var(--gb-bg1);
+  border-radius: 3px;
+}
+
+/* Active note in the file explorer: bg1 with a green left edge
+   (same as the selected item in reddit's multireddit panel) */
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  box-shadow: inset 2px 0 0 var(--gb-accent);
+}
+
+/* Active tab: green underline, like the reddit tab bar */
+.workspace-tab-header.is-active.mod-active .workspace-tab-header-inner {
+  box-shadow: inset 0 -2px 0 var(--gb-accent);
+}
+
+/* Keyboard focus: one green outline, never a light fill */
+:focus-visible {
+  outline: 2px solid var(--gb-accent);
+  outline-offset: 2px;
+}
+.suggestion-item.is-selected,
+.menu-item.selected:not(.is-disabled):not(.is-label) {
+  background-color: var(--gb-bg2);
+  color: var(--gb-fg0);
+}
+
+/* Mermaid diagrams in the palette */
+.markdown-rendered .mermaid .node rect,
+.markdown-rendered .mermaid .node polygon,
+.markdown-rendered .mermaid .node circle {
+  fill: var(--gb-bg1) !important;
+  stroke: var(--gb-accent) !important;
+}
+.markdown-rendered .mermaid .nodeLabel,
+.markdown-rendered .mermaid .label {
+  color: var(--gb-fg) !important;
+  fill: var(--gb-fg) !important;
+}
+.markdown-rendered .mermaid .flowchart-link,
+.markdown-rendered .mermaid .edgePath .path {
+  stroke: var(--gb-fg4) !important;
+}
+.markdown-rendered .mermaid marker path,
+.markdown-rendered .mermaid .arrowheadPath {
+  fill: var(--gb-fg4) !important;
+  stroke: var(--gb-fg4) !important;
+}
+.markdown-rendered .mermaid .edgeLabel,
+.markdown-rendered .mermaid .edgeLabel rect {
+  background-color: var(--gb-bg0) !important;
+  fill: var(--gb-bg0) !important;
+  color: var(--gb-fg3) !important;
+}
+
+/* Dataview tables match the Bases / markdown tables */
+.table-view-table > thead > tr > th {
+  color: var(--gb-fg0);
+  background-color: var(--gb-bg1);
+}
+.dataview.inline-field-key {
+  background-color: var(--gb-bg1);
+  color: var(--gb-aqua);
+}
+.dataview.inline-field-value {
+  background-color: var(--gb-bg-h);
+}

@@ -1,0 +1,325 @@
+/* =========================================================
+   Gruvbox Dark for Wikipedia (Vector 2022 skin)
+   Install as personal CSS at:
+     https://meta.wikimedia.org/wiki/Special:MyPage/global.css
+   (applies on every Wikimedia wiki)  — or paste into Stylus for wikipedia.org.
+   Works best with Wikipedia's own Dark mode turned on (Appearance menu > Color: Dark):
+   many templates only swap their hard-coded light colors in dark mode.
+   ========================================================= */
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 The Gruvbox Cove contributors */
+
+/* ---------- Palette + Wikipedia design tokens ----------
+   Wikipedia's skin and most components read these Codex tokens,
+   so overriding them recolors nearly everything at once. */
+:root,
+html.skin-theme-clientpref-night,
+html.skin-theme-clientpref-os {
+  --gb-bg-h:   #1d2021;
+  --gb-bg0:    #282828;
+  --gb-bg1:    #3c3836;
+  --gb-bg2:    #504945;
+  --gb-bg3:    #665c54;
+  --gb-bg4:    #7c6f64;
+  --gb-fg0:    #fbf1c7;
+  --gb-fg:     #ebdbb2;
+  --gb-fg2:    #d5c4a1;
+  --gb-fg3:    #bdae93;
+  --gb-fg4:    #a89984;
+  --gb-gray:   #928374;
+  --gb-red:    #fb4934;
+  --gb-green:  #b8bb26;
+  --gb-yellow: #fabd2f;
+  --gb-blue:   #83a598;
+  --gb-purple: #d3869b;
+  --gb-aqua:   #8ec07c;
+  --gb-orange: #fe8019;
+  --gb-green-d: #98971a;
+
+  --gb-accent:   var(--gb-green);
+  --gb-accent-2: var(--gb-aqua);
+
+  /* CaskaydiaCove: interface, headings, code.
+     Cove Sans (proportional CaskaydiaCove, fonts/cove-sans): article text. */
+  --gb-body-font: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+  --gb-read-font: "Cove Sans", "Segoe UI", sans-serif;
+
+  /* Codex tokens */
+  --background-color-base: var(--gb-bg0) !important;
+  --background-color-neutral: var(--gb-bg1) !important;
+  --background-color-neutral-subtle: var(--gb-bg-h) !important;
+  --background-color-interactive: var(--gb-bg1) !important;
+  --background-color-interactive-subtle: var(--gb-bg-h) !important;
+  --background-color-disabled: var(--gb-bg2) !important;
+  --background-color-progressive: var(--gb-green-d) !important;
+  --background-color-progressive-subtle: var(--gb-bg1) !important;
+  --background-color-backdrop-light: rgba(29,32,33,0.65) !important;
+  --background-color-notice-subtle: var(--gb-bg1) !important;
+  --background-color-warning-subtle: #3a3220 !important;
+  --background-color-error-subtle: #3c2422 !important;
+  --background-color-success-subtle: #2e3220 !important;
+
+  --color-base: var(--gb-fg) !important;
+  --color-emphasized: var(--gb-fg0) !important;
+  --color-subtle: var(--gb-fg4) !important;
+  --color-placeholder: var(--gb-gray) !important;
+  --color-disabled: var(--gb-bg4) !important;
+  --color-inverted: var(--gb-bg-h) !important;
+  --color-progressive: var(--gb-blue) !important;
+  --color-progressive--hover: var(--gb-aqua) !important;
+  --color-progressive--active: var(--gb-green) !important;
+  --color-visited: var(--gb-purple) !important;
+  --color-destructive: var(--gb-red) !important;
+  --color-error: var(--gb-red) !important;
+  --color-warning: var(--gb-yellow) !important;
+  --color-success: var(--gb-green) !important;
+  --color-notice: var(--gb-fg) !important;
+
+  --color-link: var(--gb-blue) !important;
+  --color-link--visited: var(--gb-purple) !important;
+  --color-link--hover: var(--gb-aqua) !important;
+  --color-link-red: var(--gb-red) !important;
+  --color-link-red--visited: #cc241d !important;
+
+  --border-color-base: var(--gb-bg2) !important;
+  --border-color-subtle: var(--gb-bg1) !important;
+  --border-color-muted: var(--gb-bg1) !important;
+  --border-color-interactive: var(--gb-bg3) !important;
+  --border-color-progressive: var(--gb-accent) !important;
+  --border-color-notice: var(--gb-bg3) !important;
+  --border-color-warning: var(--gb-yellow) !important;
+  --border-color-error: var(--gb-red) !important;
+  --border-color-success: var(--gb-green) !important;
+}
+
+/* ---------- Base ---------- */
+html, body, .mw-page-container, .mw-body, .vector-body,
+.vector-header-container, .mw-header, .vector-sticky-header,
+.mw-footer-container, .vector-column-start, .vector-column-end {
+  background-color: var(--gb-bg0) !important;
+  color: var(--gb-fg) !important;
+}
+.vector-header-container, .mw-header, .vector-sticky-header {
+  background-color: var(--gb-bg-h) !important;
+  border-bottom: 1px solid var(--gb-bg1) !important;
+}
+body, .vector-body, .mw-body-content, .cdx-text-input__input, button, input, select, textarea {
+  font-family: var(--gb-body-font) !important;
+}
+.vector-body { font-size: 1rem !important; line-height: 1.65 !important; }
+/* Long-form article text in Cove Sans; headings stay mono (set below) */
+.mw-parser-output { font-family: var(--gb-read-font) !important; }
+/* Prose weight: Cove Sans SemiLight (350); bold and headings keep theirs */
+.mw-parser-output :is(p, li, dd, blockquote, td, figcaption, .hatnote) { font-weight: 350; }
+code, kbd, samp, tt, pre, .mw-highlight pre, .mw-code { font-family: var(--gb-body-font) !important; }
+::selection { background: var(--gb-bg3); color: var(--gb-fg0); }
+* { scrollbar-color: var(--gb-bg3) var(--gb-bg-h); }
+
+/* ---------- Links ---------- */
+a, .mw-parser-output a, .vector-body a { color: var(--gb-blue) !important; }
+a:visited, .mw-parser-output a:visited { color: var(--gb-purple) !important; }
+a:hover { color: var(--gb-aqua) !important; }
+a.new, a.new:visited, .mw-parser-output a.new { color: var(--gb-red) !important; }
+.mw-parser-output a.external { color: var(--gb-accent-2) !important; }
+
+/* ---------- Headings ---------- */
+.mw-first-heading, .firstHeading, h1 {
+  color: var(--gb-fg0) !important;
+  font-family: var(--gb-body-font) !important;
+  border-bottom-color: var(--gb-bg2) !important;
+}
+.mw-parser-output h2, .mw-heading2 h2 {
+  color: var(--gb-accent) !important;
+  font-family: var(--gb-body-font) !important;
+}
+.mw-heading2, .mw-parser-output h2 { border-bottom: 1px solid var(--gb-bg2) !important; }
+.mw-parser-output h3, .mw-parser-output h4 { color: var(--gb-accent-2) !important; }
+.mw-parser-output h5, .mw-parser-output h6 { color: var(--gb-fg3) !important; }
+.mw-parser-output h1, .mw-parser-output h2, .mw-parser-output h3, .mw-parser-output h4,
+.mw-parser-output h5, .mw-parser-output h6, .mw-parser-output .mw-heading { font-family: var(--gb-body-font) !important; }
+.mw-editsection, .mw-editsection a { color: var(--gb-gray) !important; }
+
+/* ---------- Skin chrome: tabs, menus, TOC ---------- */
+.vector-menu-tabs .mw-list-item a, .vector-tab-noicon a { color: var(--gb-fg3) !important; }
+.vector-menu-tabs .mw-list-item.selected a,
+.vector-menu-tabs .selected a {
+  color: var(--gb-accent) !important;
+  border-bottom: 2px solid var(--gb-accent) !important;
+}
+.vector-dropdown-content, .vector-menu-content, .vector-pinnable-element,
+.vector-popup, .cdx-menu, .cdx-typeahead-search__menu, .vector-typeahead-search-container .cdx-menu {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg3) !important;
+}
+.vector-pinnable-header, .vector-pinnable-header-label { color: var(--gb-fg4) !important; border-color: var(--gb-bg2) !important; }
+.cdx-menu-item--highlighted { background-color: var(--gb-bg2) !important; }
+
+/* Table of contents */
+.vector-toc .vector-toc-link, .vector-toc .vector-toc-text { color: var(--gb-fg3) !important; }
+.vector-toc .vector-toc-list-item-active > .vector-toc-link,
+.vector-toc .vector-toc-list-item-active > .vector-toc-link .vector-toc-text {
+  color: var(--gb-accent) !important;
+  font-weight: bold;
+}
+.vector-toc .vector-toc-link:hover .vector-toc-text { color: var(--gb-fg0) !important; }
+
+/* Search box */
+.cdx-text-input__input, .cdx-search-input__input-wrapper input {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg3) !important;
+}
+.cdx-text-input__input:focus { border-color: var(--gb-accent) !important; box-shadow: inset 0 0 0 1px var(--gb-accent) !important; }
+.cdx-button, .cdx-search-input__end-button {
+  background-color: var(--gb-bg2) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg3) !important;
+}
+.cdx-button:hover { background-color: var(--gb-bg3) !important; }
+.cdx-button--action-progressive.cdx-button--weight-primary {
+  background-color: var(--gb-green-d) !important;
+  color: var(--gb-bg-h) !important;
+}
+
+/* Logo wordmark (black SVG text) */
+.mw-logo-wordmark, .mw-logo-tagline { filter: invert(0.88) sepia(0.25); }
+
+/* ---------- Article content: hard-coded template colors ---------- */
+/* Infoboxes */
+.infobox, .infobox_v2, .infobox_v3, table.infobox {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg) !important;
+  border: 1px solid var(--gb-bg2) !important;
+  border-radius: 6px;
+}
+.infobox th, .infobox td, .infobox caption, .infobox-above, .infobox-title,
+.infobox-header, .infobox-subheader, .infobox-label, .infobox-data, .infobox-below {
+  background-color: transparent !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg2) !important;
+}
+.infobox-above, .infobox-title, .infobox caption {
+  color: var(--gb-fg0) !important;
+}
+.infobox-header, .infobox-subheader {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-accent) !important;
+}
+
+/* Wikitables */
+.wikitable, table.wikitable {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg2) !important;
+}
+.wikitable > * > tr > th, .wikitable > tr > th, .wikitable th {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-fg0) !important;
+  border-color: var(--gb-bg2) !important;
+}
+.wikitable > * > tr > td, .wikitable > tr > td, .wikitable td {
+  border-color: var(--gb-bg2) !important;
+}
+/* Table cells with inline background colors (election tables, etc.)
+   keep their color but get dark text so they stay readable */
+.wikitable td[style*="background"], .wikitable th[style*="background"] {
+  color: var(--gb-bg-h) !important;
+}
+.wikitable td[style*="background"] a, .wikitable th[style*="background"] a {
+  color: #076678 !important;
+}
+
+/* Navboxes (bottom-of-article link grids) */
+.navbox, .navbox-inner, .navbox-subgroup, .navbox-list, .navbox-even, .navbox-odd {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg2) !important;
+}
+.navbox-title, .navbox-abovebelow, .navbox th, .navbox-group, .navbox-subgroup .navbox-title {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-fg0) !important;
+}
+.navbox-group { background-color: var(--gb-bg2) !important; }
+.navbox-even { background-color: var(--gb-bg0) !important; }
+
+/* Sidebars (series boxes on the right) */
+.sidebar, .sidebar-title, .sidebar-heading, .sidebar-content, .sidebar-list-title, .sidebar-navbar {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg2) !important;
+}
+.sidebar-title, .sidebar-heading, .sidebar-list-title { background-color: var(--gb-bg1) !important; }
+
+/* Message boxes (cleanup / notice banners) */
+.ambox, .ombox, .tmbox, .cmbox, .fmbox, .imbox, .mbox-small, .side-box {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg) !important;
+  border-color: var(--gb-bg2) !important;
+}
+.ambox { border-left: 4px solid var(--gb-blue) !important; }
+.ambox-speedy, .ambox-delete { border-left-color: var(--gb-red) !important; }
+.ambox-content { border-left-color: var(--gb-orange) !important; }
+.ambox-style { border-left-color: var(--gb-yellow) !important; }
+.ambox-move, .ambox-protection { border-left-color: var(--gb-purple) !important; }
+.mbox-image img, .mbox-imageright img { opacity: 0.85; }
+
+/* Hatnotes ("For other uses, see…") */
+.hatnote, .dablink, .rellink { color: var(--gb-fg4) !important; }
+
+/* Figures / thumbnails */
+figure, .thumbinner, .thumb .thumbinner, figure[typeof~="mw:File/Thumb"] > figcaption,
+.gallerybox .thumb, .gallerytext {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg3) !important;
+  border-color: var(--gb-bg2) !important;
+}
+figcaption, .thumbcaption { color: var(--gb-fg3) !important; }
+/* Transparent diagrams with black lines vanish on dark — give them a light card */
+figure .mw-file-element, .infobox-image .mw-file-element, .thumbimage {
+  background-color: #f2e5bc;
+  border-radius: 3px;
+}
+
+/* Quotes, code, references */
+blockquote, .templatequote {
+  border-left: 3px solid var(--gb-bg3) !important;
+  color: var(--gb-fg3) !important;
+  background: transparent !important;
+}
+code, kbd, samp, tt {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-orange) !important;
+  border-color: var(--gb-bg2) !important;
+  border-radius: 3px;
+}
+pre, .mw-highlight pre, .mw-code {
+  background-color: var(--gb-bg-h) !important;
+  color: var(--gb-fg2) !important;
+  border: 1px solid var(--gb-bg2) !important;
+  border-radius: 6px;
+}
+.reflist, .references, .refbegin { color: var(--gb-fg3) !important; font-size: 0.9em !important; }
+.reference a, sup.reference a { color: var(--gb-accent-2) !important; }
+.mw-cite-backlink a { color: var(--gb-fg4) !important; }
+.citation, cite { color: var(--gb-fg3) !important; }
+
+/* Hover previews (page and reference popups) */
+.mwe-popups, .mwe-popups-container, .mwe-popups .mwe-popups-extract,
+.mwe-popups-type-reference .mwe-popups-container {
+  background-color: var(--gb-bg1) !important;
+  color: var(--gb-fg) !important;
+}
+.mwe-popups .mwe-popups-extract::after {
+  background-image: linear-gradient(to right, rgba(60,56,54,0), var(--gb-bg1) 50%) !important;
+}
+.mwe-popups-settings-button, .mwe-popups-footer { filter: invert(0.8); }
+
+/* Category bar & footer */
+.catlinks {
+  background-color: var(--gb-bg-h) !important;
+  border-color: var(--gb-bg2) !important;
+  color: var(--gb-fg3) !important;
+  border-radius: 6px;
+}
+.mw-footer, .mw-footer li { color: var(--gb-gray) !important; }

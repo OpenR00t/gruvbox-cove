@@ -1,0 +1,12 @@
+/* Gruvbox Cove font rule for Steam (Material-Theme → Font: Custom).
+   Interface, titles and labels in CaskaydiaCove; paragraphs (news, patch notes, descriptions) in Cove Sans SemiLight.
+   SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 The Gruvbox Cove contributors */
+* {
+    font-family: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", Consolas, monospace !important;
+}
+p, li, blockquote, .bb_paragraph, [class*="EventDetailsBody"], [class*="PartnerEventDescription"], [class*="ReviewText"] {
+    font-family: "Cove Sans", "Segoe UI", sans-serif !important;
+    font-weight: 350;
+}
+code, pre, kbd { font-family: "CaskaydiaCove Nerd Font", monospace !important; }

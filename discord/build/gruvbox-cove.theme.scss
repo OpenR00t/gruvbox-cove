@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2022 Catppuccin
+// Copyright (c) 2026 The Gruvbox Cove contributors
+@use "sass:math";
+
+.visual-refresh.theme-dark,
+.visual-refresh .theme-dark,
+.visual-refresh.theme-light,
+.visual-refresh .theme-light,
+.visual-refresh.theme-darker,
+.visual-refresh .theme-darker,
+.visual-refresh.theme-midnight,
+.visual-refresh .theme-midnight {
+  @import "gruvbox";
+  $brand: $green;
+
+  @import "components/tweaks/dark";
+  @import "theme";
+}

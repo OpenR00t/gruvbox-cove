@@ -1,0 +1,650 @@
+/* =========================================================
+   Gruvbox Dark for old.reddit.com  (v2: green accent, readability pass)
+   Paste into: RES Settings > Appearance > Stylesheet Loader
+               > Snippets (Apply to: Everywhere)
+   ========================================================= */
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 The Gruvbox Cove contributors */
+
+:root {
+  --bg-h:   #1d2021;
+  --bg0:    #282828;
+  --bg1:    #3c3836;
+  --bg2:    #504945;
+  --bg3:    #665c54;
+  --bg4:    #7c6f64;
+  --fg0:    #fbf1c7;
+  --fg:     #ebdbb2;
+  --fg2:    #d5c4a1;
+  --fg3:    #bdae93;
+  --fg4:    #a89984;
+  --gray:   #928374;
+  --red:    #fb4934;
+  --green:  #b8bb26;
+  --yellow: #fabd2f;
+  --blue:   #83a598;
+  --purple: #d3869b;
+  --aqua:   #8ec07c;
+  --orange: #fe8019;
+  --red-d:    #cc241d;
+  --green-d:  #98971a;
+  --blue-d:   #458588;
+  --purple-d: #b16286;
+  --aqua-d:   #689d6a;
+
+  /* Accent roles: change these two to re-theme everything */
+  --accent:   var(--green);   /* primary: selections, buttons, active tabs */
+  --accent-2: var(--aqua);    /* secondary: subreddit names, hovers */
+
+  /* Fonts: CaskaydiaCove for interface, titles, headings, code;
+     Cove Sans (proportional CaskaydiaCove) for prose: posts, comments, sidebars */
+  --font-mono: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+  --font-read: "Cove Sans", "Segoe UI", sans-serif;
+}
+
+/* ---------- Base & typography ---------- */
+html, body, .content, .footer-parent, .debuginfo {
+  background: var(--bg0) !important;
+  color: var(--fg) !important;
+}
+body, input, textarea, button, select {
+  font-family: var(--font-mono) !important;
+}
+/* Prose in Cove Sans; headings and code inside it stay mono */
+.md, .md p, .md li, .md blockquote, .md td, .md th, .md dd,
+.search-result-body, .search-result-body p {
+  font-family: var(--font-read) !important;
+}
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6,
+.md code, .md pre, .md pre code {
+  font-family: var(--font-mono) !important;
+}
+/* Prose weight: Cove Sans SemiLight (350); bold text inside keeps its weight */
+.md p, .md li, .md blockquote, .md td, .md dd, .search-result-body p {
+  font-weight: 350 !important;
+}
+body { font-size: 14px !important; }
+
+/* Keep the listing/comment column beside the sidebar instead of under it,
+   so highlights, hovers and outlines never overlap the sidebar */
+body > .content { display: flow-root !important; }
+.side { position: relative; z-index: 2; }
+a { color: var(--blue) !important; }
+a:hover { color: var(--accent) !important; }
+::selection { background: var(--bg3); color: var(--fg0); }
+
+* { scrollbar-color: var(--bg3) var(--bg-h); }
+::-webkit-scrollbar { width: 10px; height: 10px; background: var(--bg-h); }
+::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 5px; }
+
+/* ---------- Top subreddit bar ---------- */
+#sr-header-area, #sr-more-link {
+  background: var(--bg-h) !important;
+  border-bottom: 1px solid var(--bg1) !important;
+  font-size: 12px !important;
+}
+#sr-header-area a, .sr-list .separator { color: var(--fg4) !important; }
+#sr-header-area a:hover { color: var(--accent) !important; }
+#sr-header-area .selected a { color: var(--accent) !important; font-weight: bold; }
+.drop-choices, .RESDropdownList, .srdrop {
+  background: var(--bg1) !important;
+  border: 1px solid var(--bg3) !important;
+}
+.drop-choices a.choice, .dropdown .selected { color: var(--fg) !important; }
+.drop-choices a.choice:hover { background: var(--bg2) !important; }
+
+/* ---------- Header ---------- */
+#header, #header-bottom-left {
+  background: var(--bg-h) !important;
+  border-bottom: 1px solid var(--bg2) !important;
+}
+#header-bottom-right {
+  background: var(--bg1) !important;
+  border-radius: 6px 0 0 0;
+  color: var(--fg3) !important;
+}
+#header-bottom-right .user a { color: var(--accent) !important; }
+.pagename a, .redditname a { color: var(--accent) !important; }
+
+.tabmenu li a {
+  background: var(--bg1) !important;
+  color: var(--fg3) !important;
+  border: none !important;
+  border-radius: 4px 4px 0 0;
+  font-size: 13px !important;
+  padding: 4px 9px !important;
+}
+.tabmenu li a:hover { color: var(--accent) !important; }
+.tabmenu li.selected a {
+  background: var(--bg2) !important;
+  color: var(--accent) !important;
+  border: none !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+
+/* ---------- Sidebar ---------- */
+.side, .side .spacer { background: transparent !important; }
+.side, .side .md, .side input, .side label, .side select { font-size: 13px !important; }
+.side .md { line-height: 1.5 !important; }
+.titlebox, .sidecontentbox .content, .side .linkinfo, .side .account-activity-box {
+  background: var(--bg1) !important;
+  border: 1px solid var(--bg2) !important;
+  border-radius: 6px;
+  color: var(--fg) !important;
+}
+.titlebox h1 a { color: var(--accent) !important; }
+/* "Show my flair" toggle and preview: was a white box */
+.side .titlebox :is(form.flairtoggle, .flairtoggle, .tagline, .flairselector, .flairselectbtn):not(#_) {
+  background: transparent !important;
+  color: var(--fg3) !important;
+}
+.side .titlebox .flairtoggle label:not(#_) { color: var(--fg3) !important; }
+.sidecontentbox .title h1 { color: var(--fg3) !important; }
+
+/* Strip the "…for your hobby" clutter under "Create your own subreddit" */
+.sidebox .spacer, .sidebox .subtitle {
+  background: transparent !important;
+  border: none !important;
+}
+.sidebox.create > :not(.morelink),
+.sidebox .subtitles, .sidebox .subtitle,
+.sidebox .sidebox-icon { display: none !important; }
+.sidebox .morelink a { font-size: 14px !important; }
+
+/* Expanded search options panel */
+#search, #searchexpando, .searchexpando {
+  background: var(--bg1) !important;
+  color: var(--fg) !important;
+  border-color: var(--bg2) !important;
+}
+
+.morelink, .sidebox .morelink {
+  background: var(--bg1) !important;
+  background-image: none !important;
+  border: 1px solid var(--bg3) !important;
+  border-radius: 4px;
+}
+.morelink a, .sidebox .morelink a { color: var(--accent) !important; }
+.morelink:hover { background: var(--bg2) !important; border-color: var(--accent) !important; }
+.morelink .nub { display: none !important; }
+
+/* Inputs */
+input, textarea, select, #search input[type="text"] {
+  background: var(--bg-h) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--bg3) !important;
+  border-radius: 4px;
+}
+input:focus, textarea:focus { border-color: var(--accent) !important; outline: none; }
+#search input[type="submit"] {
+  background-color: transparent !important;
+  border: none !important;
+  filter: invert(0.75);
+}
+button, .btn, input[type="submit"] {
+  background: var(--bg2) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--bg3) !important;
+  border-radius: 4px;
+}
+button:hover, .btn:hover { background: var(--bg3) !important; }
+
+.fancy-toggle-button .add { background: var(--green-d) !important; color: var(--bg-h) !important; border: none !important; }
+.fancy-toggle-button .remove { background: var(--bg2) !important; color: var(--fg3) !important; border: none !important; }
+
+/* ---------- Link listings ---------- */
+.thing.link {
+  background: var(--bg0) !important;
+  border-radius: 6px;
+  padding: 6px 8px !important;
+  margin-bottom: 4px !important;
+}
+.thing.link.even { background: var(--bg-h) !important; }
+.thing.link:hover { background: var(--bg1) !important; }
+
+/* Titles: bigger, brighter, more line spacing */
+a.title, .link .title a {
+  color: var(--fg0) !important;
+  font-size: 17px !important;
+  line-height: 1.4 !important;
+}
+a.title:visited, .link .title a:visited { color: var(--fg4) !important; }
+.link .title { margin-bottom: 3px !important; }
+.link.stickied a.title { color: var(--accent) !important; font-weight: bold; }
+
+.rank { color: var(--bg4) !important; font-size: 16px !important; }
+.domain, .domain a { color: var(--gray) !important; font-size: 12.5px !important; }
+
+.tagline, .entry .buttons li a, .flat-list a {
+  color: var(--gray) !important;
+  font-size: 13px !important;
+}
+.tagline { margin-bottom: 2px !important; }
+.tagline a.author { color: var(--fg3) !important; }
+.tagline a.author:hover, .entry .buttons li a:hover { color: var(--accent) !important; }
+.tagline .subreddit { color: var(--accent-2) !important; }
+.entry .buttons li a.comments { color: var(--fg3) !important; }
+
+/* Score + vote arrows */
+.score { color: var(--fg4) !important; font-size: 13px !important; }
+.score.likes, .likes .score { color: var(--green) !important; }
+.score.dislikes, .dislikes .score { color: var(--red) !important; }
+.arrow {
+  background-image: none !important;
+  text-align: center;
+  font-size: 13px;
+  line-height: 14px;
+  color: var(--bg4);
+  cursor: pointer;
+}
+.arrow.up::before, .arrow.upmod::before { content: "▲"; }
+.arrow.down::before, .arrow.downmod::before { content: "▼"; }
+.arrow:hover { color: var(--fg3); }
+.arrow.upmod { color: var(--green) !important; }
+.arrow.downmod { color: var(--red) !important; }
+
+/* Flair & stamps */
+.linkflairlabel, .flair {
+  background: var(--bg2) !important;
+  color: var(--fg2) !important;
+  border: none !important;
+  border-radius: 3px;
+  padding: 0 5px;
+  font-size: 12.5px !important;
+}
+.nsfw-stamp acronym, .nsfw-stamp { color: var(--red) !important; border-color: var(--red) !important; background: transparent !important; }
+.spoiler-stamp, .spoiler-stamp acronym { color: var(--purple) !important; border-color: var(--purple) !important; background: transparent !important; }
+
+/* Hide promoted posts */
+.promotedlink, .promoted, #ad_main, .ad-container, .sponsorshipbox { display: none !important; }
+
+.nextprev a, .next-suggestions a {
+  background: var(--bg1) !important;
+  border: 1px solid var(--bg3) !important;
+  color: var(--accent) !important;
+  border-radius: 4px;
+}
+
+/* Expandos */
+.expando, .res-expando-box, .usertext-body.md-container { background: transparent !important; }
+.expando .usertext-body, .link .usertext-body .md {
+  background: var(--bg1) !important;
+  border: 1px solid var(--bg2) !important;
+  border-radius: 6px;
+  color: var(--fg) !important;
+}
+.expando-button { filter: invert(0.8) sepia(0.6) hue-rotate(5deg); }
+/* Spoiler-tagged self posts: reddit dims the expanded text; show it at full strength
+   (you already chose to open it). Inline >!spoilers!< stay hidden until hovered. */
+.thing.spoiler:not(#_) .expando,
+.thing.spoiler:not(#_) .expando :is(.usertext-body, .md, .md *:not(.md-spoiler-text):not(code):not(pre):not(pre *)) {
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+.thing.spoiler:not(#_) .expando .md :is(p, li, blockquote, td, dd, span:not(.md-spoiler-text), strong, em) {
+  color: var(--fg) !important;
+}
+.thing.spoiler:not(#_) .expando .md a { color: var(--blue) !important; }
+
+/* ---------- Comments ---------- */
+.commentarea, .commentarea > .menuarea, .panestack-title {
+  background: var(--bg0) !important;
+  color: var(--fg3) !important;
+  border-color: var(--bg2) !important;
+}
+.panestack-title .title { color: var(--fg) !important; }
+
+/* :not(#_) adds ID-level specificity so these beat RES "Comment Boxes"
+   at any nesting depth; each extra level alternates the shade */
+.comment:not(#_) {
+  background: var(--bg-h) !important;
+  background-color: var(--bg-h) !important;
+  border: 1px solid var(--bg1) !important;
+  border-radius: 6px;
+  margin: 6px 0 !important;
+  padding: 6px 8px !important;
+  box-shadow: none !important;
+}
+.comment:not(#_) .comment:not(#_) {
+  background: var(--bg0) !important;
+  background-color: var(--bg0) !important;
+}
+.comment:not(#_) .comment:not(#_) .comment:not(#_) {
+  background: var(--bg-h) !important;
+  background-color: var(--bg-h) !important;
+}
+.comment:not(#_) .comment:not(#_) .comment:not(#_) .comment:not(#_) {
+  background: var(--bg0) !important;
+  background-color: var(--bg0) !important;
+}
+.comment:not(#_) .comment:not(#_) .comment:not(#_) .comment:not(#_) .comment:not(#_) {
+  background: var(--bg-h) !important;
+  background-color: var(--bg-h) !important;
+}
+.comment:not(#_) .comment:not(#_) .comment:not(#_) .comment:not(#_) .comment:not(#_) .comment:not(#_) {
+  background: var(--bg0) !important;
+  background-color: var(--bg0) !important;
+}
+/* Inner wrappers stay transparent so the box color shows through */
+.comment:not(#_) .entry, .comment:not(#_) .child, .comment:not(#_) .sitetable,
+.comment:not(#_) .usertext-body, .comment:not(#_) .md-container {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+.comment:not(#_) .md { background: transparent !important; }
+
+.comment .child { border-left: 2px solid var(--green-d) !important; }
+.comment .comment .child { border-left-color: var(--aqua-d) !important; }
+.comment .comment .comment .child { border-left-color: var(--blue-d) !important; }
+.comment .comment .comment .comment .child { border-left-color: var(--purple-d) !important; }
+
+.comment.collapsed { opacity: 0.6; }
+.comment .expand { color: var(--fg4) !important; }
+
+/* RES user highlighting (OP, friends, mods) uses bright default colors */
+html body .tagline a.author.submitter:not(#_),
+html body a.author.submitter:not(#_) {
+  background-color: var(--blue) !important;
+  color: var(--bg-h) !important;
+}
+html body .tagline a.author.friend:not(#_) {
+  background-color: var(--purple) !important;
+  color: var(--bg-h) !important;
+}
+html body .tagline a.author.moderator:not(#_) {
+  background-color: var(--green) !important;
+  color: var(--bg-h) !important;
+}
+.tagline .submitter, .author.submitter {
+  color: var(--bg-h) !important;
+  background: var(--blue) !important;
+  padding: 0 3px; border-radius: 3px;
+}
+.author.moderator, .tagline .moderator {
+  color: var(--bg-h) !important;
+  background: var(--green) !important;
+  padding: 0 3px; border-radius: 3px;
+}
+.author.admin { color: var(--bg-h) !important; background: var(--red) !important; padding: 0 3px; border-radius: 3px; }
+
+.comment.new-comment > .entry .usertext-body {
+  border-left: 3px solid var(--accent) !important;
+  padding-left: 6px;
+}
+
+.usertext-edit textarea { background: var(--bg-h) !important; color: var(--fg) !important; }
+.usertext-edit .bottom-area, .markhelp {
+  background: var(--bg1) !important;
+  color: var(--fg3) !important;
+}
+
+/* ---------- Markdown ---------- */
+.md { font-size: 15.5px !important; line-height: 1.6 !important; max-width: 90ch; }
+.md, .md p, .md li { color: var(--fg) !important; }
+.md p { margin-bottom: 0.6em !important; }
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6 { color: var(--accent) !important; border-color: var(--bg2) !important; }
+.md blockquote {
+  border-left: 3px solid var(--bg3) !important;
+  color: var(--fg3) !important;
+  background: transparent !important;
+}
+.md code {
+  background: var(--bg1) !important;
+  color: var(--orange) !important;
+  border: none !important;
+  border-radius: 3px;
+}
+.md pre {
+  background: var(--bg-h) !important;
+  border: 1px solid var(--bg2) !important;
+  border-radius: 6px;
+}
+.md pre code { color: var(--fg2) !important; background: transparent !important; }
+.md table th, .md table td { border: 1px solid var(--bg2) !important; }
+.md table th { background: var(--bg1) !important; color: var(--accent) !important; }
+.md hr { border-color: var(--bg2) !important; background: var(--bg2) !important; }
+.md-spoiler-text { background: var(--bg3) !important; color: var(--bg3) !important; }
+.md-spoiler-text.revealed, .md-spoiler-text:hover { color: var(--fg) !important; }
+
+/* ---------- Misc reddit chrome ---------- */
+.infobar, .reddit-infobar, .infobar.listingsignupbar {
+  background: var(--bg1) !important;
+  border: 1px solid var(--bg2) !important;
+  color: var(--fg) !important;
+}
+.footer, .footer-parent .bottommenu { background: var(--bg-h) !important; color: var(--gray) !important; }
+.footer .col ul a { color: var(--fg4) !important; }
+.menuarea, .menuarea .dropdown { color: var(--fg3) !important; }
+.error, .status.error { color: var(--red) !important; }
+.gilded-icon, .awardings-bar { opacity: 0.8; }
+
+.message.new > .entry { border-left: 3px solid var(--accent) !important; padding-left: 6px; }
+.message .subject { color: var(--fg2) !important; }
+
+/* ---------- Multireddit panel (left listing-chooser) ---------- */
+/* To remove it entirely instead, uncomment the next line: */
+/* .listing-chooser { display: none !important; } body.with-listing-chooser > .content, body.with-listing-chooser #header-bottom-left .tabmenu { margin-left: 0 !important; } */
+
+.listing-chooser, .listing-chooser .contents {
+  background: var(--bg-h) !important;
+  border-right: 1px solid var(--bg1) !important;
+}
+.listing-chooser .grippy {
+  background: var(--bg1) !important;
+  border: none !important;
+}
+.listing-chooser .grippy::after,
+.listing-chooser .grippy::before { filter: invert(0.6); }
+.listing-chooser .grippy:hover { background: var(--bg2) !important; }
+
+.listing-chooser h3 {
+  color: var(--fg4) !important;
+  background: transparent !important;
+  border-color: var(--bg2) !important;
+}
+.listing-chooser li a {
+  background: var(--bg0) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--bg1) !important;
+  border-radius: 4px;
+  font-size: 14px !important;
+}
+.listing-chooser li a:hover {
+  background: var(--bg1) !important;
+  border-color: var(--bg3) !important;
+}
+.listing-chooser li.selected a {
+  background: var(--bg1) !important;
+  color: var(--accent) !important;
+  border-left: 3px solid var(--accent) !important;
+  box-shadow: none !important;
+}
+.listing-chooser li a .description { color: var(--gray) !important; font-size: 12px !important; }
+.listing-chooser .intro {
+  background: var(--bg1) !important;
+  color: var(--fg4) !important;
+  border: none !important;
+}
+.listing-chooser .intro p { color: var(--fg4) !important; }
+.listing-chooser li.create, .listing-chooser li.create form {
+  background: transparent !important;
+  border: none !important;
+}
+.listing-chooser li.create button {
+  background: var(--green-d) !important;
+  color: var(--bg-h) !important;
+  border: none !important;
+}
+
+/* ---------- RES elements ---------- */
+.RESHover, .RESHoverContainer, .RESPopup, .res-hover-container {
+  background: var(--bg1) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--bg3) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+.RESUserTag, .userTagLink { color: var(--fg4) !important; }
+
+.NERPageMarker {
+  background: var(--bg1) !important;
+  color: var(--accent) !important;
+  border: 1px dashed var(--bg3) !important;
+  border-radius: 6px;
+}
+#progressIndicator, .res-ner-loading { background: var(--bg1) !important; color: var(--fg3) !important; }
+#NREPause { filter: invert(0.85) sepia(0.5); }
+
+/* Keyboard-nav selection: override RES's light focus background */
+html body .RES-keyNav-activeElement,
+html body .res-selected {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: -2px;
+  background: var(--bg1) !important;
+}
+/* Strip RES's light focus color from everything inside the selected item,
+   except the boxes we style on purpose */
+html body .RES-keyNav-activeElement *:not(.md):not(.linkflairlabel):not(.flair):not(button):not(code):not(pre):not(img):not(video):not(.add):not(.remove),
+html body .res-selected *:not(.md):not(.linkflairlabel):not(.flair):not(button):not(code):not(pre):not(img):not(video):not(.add):not(.remove) {
+  background-color: transparent !important;
+}
+html body .RES-keyNav-activeElement .md,
+html body .res-selected .md {
+  background: var(--bg0) !important;
+}
+
+/* Extra-specific override for the selected item itself (search results use
+   a different RES focus rule than listings) */
+html body .RES-keyNav-activeElement.RES-keyNav-activeElement.RES-keyNav-activeElement,
+html body .search-result.RES-keyNav-activeElement.RES-keyNav-activeElement {
+  background: var(--bg1) !important;
+  background-color: var(--bg1) !important;
+}
+html body .search-result.RES-keyNav-activeElement a.search-title { color: var(--fg0) !important; }
+
+/* ---------- Single, padded selection box for comments ---------- */
+/* Kill the outline/border/shadow on the comment wrapper itself */
+html body .comment.RES-keyNav-activeElement:not(#_),
+html body .comment.res-selected:not(#_) {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--bg1) !important;
+}
+/* Draw one box around just this comment's own content, offset
+   outward so it never touches the username or text */
+html body .comment.RES-keyNav-activeElement:not(#_) > .entry,
+html body .comment:not(#_) > .entry.RES-keyNav-activeElement,
+html body .comment.res-selected:not(#_) > .entry {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 5px !important;
+  border: none !important;
+  border-radius: 4px;
+  background-color: var(--bg1) !important;
+  box-shadow: 0 0 0 5px var(--bg1) !important;  /* fills the gap with the same shade */
+}
+/* Posts in listings / search: never box the inner .entry or anything inside it */
+html body .thing.link .entry.RES-keyNav-activeElement:not(#_),
+html body .thing.link.RES-keyNav-activeElement:not(#_) .entry,
+html body .thing.link .RES-keyNav-activeElement:not(#_),
+html body .search-result .RES-keyNav-activeElement:not(#_) {
+  outline: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+/* ...and draw exactly one box around the whole post row,
+   whether RES marks the row or only its .entry */
+html body .thing.link.RES-keyNav-activeElement:not(#_),
+html body .thing.link:has(> .entry.RES-keyNav-activeElement):not(#_),
+html body .search-result.RES-keyNav-activeElement:not(#_),
+html body .search-result:has(.RES-keyNav-activeElement):not(#_) {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+  background-color: var(--bg1) !important;
+  box-shadow: none !important;
+}
+
+/* Reddit's own "last clicked" marker (the dashed box) — make it subtle */
+.thing.last-clicked {
+  border: 1px dashed var(--bg3) !important;
+  outline: none !important;
+}
+
+/* ---------- Search results page ---------- */
+/* "subreddits / refine" tabs */
+.search-page .content li, .search-page .content li a,
+.search-page .content [class*="tab"], .search-page .content [class*="tab"] a {
+  background-color: var(--bg1) !important;
+  color: var(--fg3) !important;
+  border-color: var(--bg2) !important;
+}
+.search-page .content li.selected, .search-page .content li.selected a,
+.search-page .content [class*="tab"].selected {
+  background-color: var(--bg2) !important;
+  color: var(--accent) !important;
+}
+.search-page .content, .search-page .listing,
+[class*="search-result"], .search-page .menuarea,
+.search-page .search-result-listing, .search-page .search-result-group {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: var(--bg2) !important;
+  color: var(--fg) !important;
+}
+.search-result {
+  padding: 8px 10px !important;
+  border-radius: 6px;
+}
+.search-result:hover { background: var(--bg1) !important; }
+.search-result-group {
+  background: var(--bg-h) !important;
+  border: 1px solid var(--bg1) !important;
+  border-radius: 6px;
+  padding: 6px !important;
+}
+.search-result-group-header, .search-page .listing-header {
+  color: var(--fg4) !important;
+  border-bottom: 1px solid var(--bg2) !important;
+}
+a.search-title, .search-result-header a {
+  color: var(--fg0) !important;
+  font-size: 16px !important;
+}
+a.search-title:visited { color: var(--fg4) !important; }
+.search-result-meta, .search-result-footer, .search-result-meta a,
+.search-result .search-subscribers, .search-result .search-time {
+  color: var(--gray) !important;
+  font-size: 12.5px !important;
+}
+.search-result-meta a.author, .search-result-meta .search-subreddit-link { color: var(--accent-2) !important; }
+.search-result-body, .search-result-body .md, .search-result-body p {
+  color: var(--fg) !important;
+  font-size: 14px !important;
+}
+/* Search-term highlighting */
+.search-result mark, .search-result .highlight, .search-result em.highlight {
+  background: transparent !important;
+  color: var(--accent) !important;
+  font-weight: bold;
+}
+/* "more" fade on truncated result bodies */
+.search-expando::before, .search-expando::after,
+.search-expando.collapsed::before, .search-expando.collapsed::after,
+.search-expando-gradient {
+  background: linear-gradient(to bottom, transparent, var(--bg0)) !important;
+}
+.search-result:hover .search-expando::before,
+.search-result:hover .search-expando::after,
+.search-result:hover .search-expando-gradient {
+  background: linear-gradient(to bottom, transparent, var(--bg1)) !important;
+}
+.search-expando-button, .search-result .more { color: var(--accent) !important; }
+.search-page .searchpane, .search-page #search {
+  background: var(--bg1) !important;
+  border: 1px solid var(--bg2) !important;
+  border-radius: 6px;
+}
+.search-page .searchpane input[type="text"] { font-size: 15px !important; }
+.search-page .searchpane button, .search-page .searchpane input[type="submit"] {
+  background-color: var(--bg2) !important;
+}
+.search-page .menuarea .dropdown .selected { color: var(--accent) !important; }

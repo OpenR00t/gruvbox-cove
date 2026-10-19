@@ -1,0 +1,56 @@
+:root {
+    --theme-color: "Gruvbox Cove";
+    --hue-rotate: 270deg;
+
+    /* Gruvbox Cove palette for Material-Theme. Built by build_steam.py; edit the role table there. */
+    /* SPDX-License-Identifier: AGPL-3.0-or-later. Copyright (C) 2026 The Gruvbox Cove contributors */
+    --md-sys-color-primary: rgb(184, 187, 38);
+    --md-sys-color-on-primary: rgb(29, 32, 33);
+    --md-sys-color-primary-container: rgb(74, 77, 26);
+    --md-sys-color-on-primary-container: rgb(235, 219, 178);
+    --md-sys-color-primary-fixed: rgb(184, 187, 38);
+    --md-sys-color-primary-fixed-dim: rgb(152, 151, 26);
+    --md-sys-color-on-primary-fixed: rgb(29, 32, 33);
+    --md-sys-color-on-primary-fixed-variant: rgb(60, 56, 54);
+    --md-sys-color-inverse-primary: rgb(121, 116, 14);
+    --md-sys-color-surface-tint: rgb(184, 187, 38);
+    --md-sys-color-secondary: rgb(142, 192, 124);
+    --md-sys-color-on-secondary: rgb(29, 32, 33);
+    --md-sys-color-secondary-container: rgb(80, 73, 69);
+    --md-sys-color-on-secondary-container: rgb(235, 219, 178);
+    --md-sys-color-secondary-fixed: rgb(142, 192, 124);
+    --md-sys-color-secondary-fixed-dim: rgb(104, 157, 106);
+    --md-sys-color-on-secondary-fixed: rgb(29, 32, 33);
+    --md-sys-color-on-secondary-fixed-variant: rgb(60, 56, 54);
+    --md-sys-color-tertiary: rgb(131, 165, 152);
+    --md-sys-color-on-tertiary: rgb(29, 32, 33);
+    --md-sys-color-tertiary-container: rgb(46, 59, 59);
+    --md-sys-color-on-tertiary-container: rgb(235, 219, 178);
+    --md-sys-color-tertiary-fixed: rgb(131, 165, 152);
+    --md-sys-color-tertiary-fixed-dim: rgb(69, 133, 136);
+    --md-sys-color-on-tertiary-fixed: rgb(29, 32, 33);
+    --md-sys-color-on-tertiary-fixed-variant: rgb(60, 56, 54);
+    --md-sys-color-error: rgb(251, 73, 52);
+    --md-sys-color-on-error: rgb(29, 32, 33);
+    --md-sys-color-error-container: rgb(74, 31, 27);
+    --md-sys-color-on-error-container: rgb(251, 241, 199);
+    --md-sys-color-background: rgb(40, 40, 40);
+    --md-sys-color-on-background: rgb(235, 219, 178);
+    --md-sys-color-surface: rgb(40, 40, 40);
+    --md-sys-color-on-surface: rgb(235, 219, 178);
+    --md-sys-color-surface-variant: rgb(60, 56, 54);
+    --md-sys-color-on-surface-variant: rgb(189, 174, 147);
+    --md-sys-color-surface-dim: rgb(29, 32, 33);
+    --md-sys-color-surface-bright: rgb(80, 73, 69);
+    --md-sys-color-surface-container-lowest: rgb(29, 32, 33);
+    --md-sys-color-surface-container-low: rgb(29, 32, 33);
+    --md-sys-color-surface-container: rgb(40, 40, 40);
+    --md-sys-color-surface-container-high: rgb(50, 48, 47);
+    --md-sys-color-surface-container-highest: rgb(60, 56, 54);
+    --md-sys-color-inverse-surface: rgb(235, 219, 178);
+    --md-sys-color-inverse-on-surface: rgb(40, 40, 40);
+    --md-sys-color-outline: rgb(124, 111, 100);
+    --md-sys-color-outline-variant: rgb(80, 73, 69);
+    --md-sys-color-shadow: rgb(0, 0, 0);
+    --md-sys-color-scrim: rgb(0, 0, 0);
+}

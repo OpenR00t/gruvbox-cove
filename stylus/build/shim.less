@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 Catppuccin
+// Copyright (c) 2026 The Gruvbox Cove contributors
+// Gruvbox Cove shim for Catppuccin userstyle templates
+@darkFlavor: mocha; @lightFlavor: mocha; @accentColor: green;
+@logo: 1; @oled: 0; @sponsorBlock: 1;
+#lib {
+  .palette() {
+    @rosewater: #d5c4a1; @flamingo: #fe8019; @pink: #d3869b; @mauve: #d3869b;
+    @red: #fb4934; @maroon: #cc241d; @peach: #fe8019; @yellow: #fabd2f;
+    @green: #b8bb26; @teal: #8ec07c; @sky: #83a598; @sapphire: #83a598;
+    @blue: #83a598; @lavender: #83a598;
+    @text: #ebdbb2; @subtext1: #bdae93; @subtext0: #a89984;
+    @overlay2: #928374; @overlay1: #928374; @overlay0: #7c6f64;
+    @surface2: #665c54; @surface1: #504945; @surface0: #3c3836;
+    @base: #282828; @mantle: #1d2021; @crust: #1d2021;
+    @accent: #b8bb26;
+    @text-filter: brightness(0) saturate(100%) invert(93%) sepia(12%) saturate(560%) hue-rotate(331deg) brightness(97%);
+    @subtext1-filter: brightness(0) saturate(100%) invert(77%) sepia(10%) saturate(520%) hue-rotate(2deg) brightness(91%);
+  }
+  .defaults() {
+    color-scheme: dark;
+    ::selection { background-color: #665c54; color: #fbf1c7; }
+    input, textarea { &::placeholder { color: #928374 !important; } }
+    scrollbar-color: #665c54 #1d2021;
+  }
+}

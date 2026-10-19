@@ -1,0 +1,22 @@
+// Merge into VS Code settings.json (Ctrl+Shift+P → "Preferences: Open User Settings (JSON)")
+{
+  "workbench.colorTheme": "Gruvbox Cove",
+
+  // Code: CaskaydiaCove (with Cascadia's ligatures)
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Cascadia Code', Consolas, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.6,
+
+  // Terminal: the Mono build keeps Nerd icons in single cells
+  "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'Cascadia Mono', monospace",
+
+  // Prose: Markdown preview in Cove Sans, code blocks in it stay mono
+  "markdown.preview.fontFamily": "'Cove Sans', 'Segoe UI', sans-serif",
+  "markdown.preview.lineHeight": 1.6,
+  "markdown.styles": ["file:///<path to this repo>/vscode/markdown-preview.css"],
+
+  "editor.cursorBlinking": "smooth",
+  "editor.bracketPairColorization.enabled": true,
+  "window.titleBarStyle": "custom"
+}

@@ -1,0 +1,66 @@
+/* ==UserStyle==
+@name         Gruvbox Cove — global fonts
+@namespace    gruvbox-cove
+@version      1.5.0
+@description  The font rule on every site without a hand-made theme: prose in Cove Sans; interface, headings and code in CaskaydiaCove. Icon fonts are left alone.
+@author       The Gruvbox Cove contributors
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+
+/*
+  THE FONT RULE (same as the reddit, Wikipedia and Obsidian themes)
+    Prose you read in sentences  -> Cove Sans        (--read)
+    Everything else: interface, titles, headings, labels, inputs -> CaskaydiaCove  (--mono)
+    Code, always                 -> CaskaydiaCove
+
+  Sites with their own hand-made theme are excluded in the regexp below
+  (their theme already applies the rule). The list is written by
+  stylus/build/build_fonts.py from stylus/build/themed-sites.txt.
+
+  SPDX-License-Identifier: AGPL-3.0-or-later
+  Copyright (C) 2026 The Gruvbox Cove contributors
+*/
+
+@-moz-document regexp("^https?://(?!([^/]*\\.)?reddit\\.com|([^/]*\\.)?youtube\\.com|([^/]*\\.)?github\\.com|([^/]*\\.)?duckduckgo\\.com|([^/]*\\.)?duck\\.ai|([^/]*\\.)?wikipedia\\.org|([^/]*\\.)?wikimedia\\.org|([^/]*\\.)?wiktionary\\.org|([^/]*\\.)?mediawiki\\.org)[^/]+(/.*)?$") {
+
+  :root {
+    --gbc-mono: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;
+    --gbc-read: "Cove Sans", "Segoe UI", sans-serif;
+  }
+
+  /* 1. Interface: everything starts mono */
+  html, body,
+  button:not([class*="icon" i]):not([class*="fa-"]),
+  input, select, textarea, label, nav, header, footer, aside, menu {
+    font-family: var(--gbc-mono) !important;
+  }
+
+  /* 2. Prose: paragraphs and the blocks long text lives in */
+  p, li, dd, dt, blockquote, figcaption, summary, td, th, caption,
+  article, [role="article"], [itemprop="articleBody"], .prose, .markdown-body, .post-content, .entry-content {
+    font-family: var(--gbc-read) !important;
+  }
+  /* Prose weight: Cove Sans SemiLight (350); bold text inside keeps its own weight */
+  p, li, dd, blockquote, figcaption, td, article, [role="article"], [itemprop="articleBody"], .prose, .markdown-body, .post-content, .entry-content {
+    font-weight: 350;
+  }
+  /* ...except inside interface areas, where short labels stay mono */
+  nav :is(p, li, dd, dt, td, th), header :is(p, li), footer :is(p, li),
+  menu li, [role="navigation"] :is(p, li), [role="menu"] li, [role="tablist"] li, [role="toolbar"] li {
+    font-family: var(--gbc-mono) !important;
+  }
+
+  /* 3. Headings stay mono, even inside prose */
+  h1, h2, h3, h4, h5, h6, [role="heading"] {
+    font-family: var(--gbc-mono) !important;
+  }
+
+  /* 4. Code is always mono */
+  code, pre, kbd, samp, tt, var,
+  pre *:not([class*="icon" i]):not([class*="fa-"]), code *:not([class*="icon" i]):not([class*="fa-"]), [class*="monospace" i], .highlight, .blob-code, .CodeMirror, .cm-editor, .monaco-editor {
+    font-family: var(--gbc-mono) !important;
+  }
+
+  /* Icon fonts are safe: rules above only target text elements, and
+     the wildcard code selectors skip anything icon-like. */
+}

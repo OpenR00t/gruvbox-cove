@@ -1,0 +1,11 @@
+# Local-only material: personal site styles, settings, old experiments
+private/
+
+# Build output and caches
+*.vsix
+node_modules/
+__pycache__/
+stylus/build/*.prep.less
+stylus/build/*.compiled.css
+stylus/build/*.mapped.css
+discord/build/catppuccin-discord/

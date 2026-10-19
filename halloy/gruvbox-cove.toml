@@ -1,0 +1,89 @@
+# Gruvbox Cove for Halloy — green accent, gruvbox dark.
+# Copy to %AppData%\halloy\themes\gruvbox-cove.toml, then set  theme = "gruvbox-cove"  in config.toml.
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 The Gruvbox Cove contributors
+
+[general]
+background = "#1d2021"            # sidebar / window chrome (bg0_h)
+border = "#3c3836"
+horizontal_rule = "#3c3836"
+horizontal_rule_text = "#928374"
+scrollbar = "#504945"
+unread_indicator = "#b8bb26"       # green accent
+highlight_indicator = "#fe8019"    # mentions: orange
+
+[text]
+primary = "#ebdbb2"
+secondary = "#a89984"
+tertiary = "#d3869b"
+success = "#b8bb26"
+error = "#fb4934"
+warning = "#fabd2f"
+info = "#83a598"
+debug = "#8ec07c"
+trace = "#928374"
+
+[buttons.primary]
+background = "#1d2021"
+background_hover = "#32302f"
+background_selected = "#3c3836"
+background_selected_hover = "#504945"
+border_active = "#b8bb26"
+
+[buttons.secondary]
+background = "#3c3836"
+background_hover = "#504945"
+background_selected = "#665c54"
+background_selected_hover = "#7c6f64"
+border_active = "#b8bb26"
+
+[buffer]
+background = "#282828"
+background_text_input = "#1d2021"
+background_title_bar = "#1d2021"
+border = "#3c3836"
+border_selected = "#b8bb26"
+focus_border = "#b8bb26"
+focus_background = "#32302f"
+selection = "#504945"
+highlight = "#3d3426"              # mention row: orange tinted bg
+action = { color = "#8ec07c", font_style = "italic" }
+code = "#fe8019"
+nickname = { color = "#8ec07c", font_style = "bold" }
+nickname_offline = "#7c6f64"
+self_message = "#d5c4a1"
+timestamp = "#7c6f64"
+topic = "#a89984"
+url = "#83a598"
+backlog_rule = "#b8bb26"
+backlog_rule_text = "#b8bb26"
+date_rule = "#504945"
+date_rule_text = "#928374"
+
+[buffer.server_messages]
+default = "#928374"
+join = "#98971a"
+part = "#7c6f64"
+quit = "#7c6f64"
+kick = "#fb4934"
+change_topic = "#83a598"
+standard_reply_fail = "#fb4934"
+standard_reply_warn = "#fabd2f"
+
+[formatting]
+white = "#fbf1c7"
+black = "#282828"
+blue = "#458588"
+green = "#98971a"
+red = "#cc241d"
+brown = "#af3a03"
+magenta = "#b16286"
+orange = "#d65d0e"
+yellow = "#d79921"
+lightgreen = "#b8bb26"
+cyan = "#689d6a"
+lightcyan = "#8ec07c"
+lightblue = "#83a598"
+pink = "#d3869b"
+grey = "#928374"
+lightgrey = "#bdae93"
