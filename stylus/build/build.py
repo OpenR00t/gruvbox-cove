@@ -21,10 +21,11 @@ def remap(css):
         return '#' + MAP[h] + (m.group(2) or '') if h in MAP else m.group(0)
     return re.sub(r'(?<!=")#([0-9a-fA-F]{6})([0-9a-fA-F]{2})?\b', rep, css)   # skip [fill="#..."] selectors
 
-for site in ("github", "youtube", "duckduckgo"):
+for site in ("github", "youtube", "duckduckgo", "twitch"):
     less = urllib.request.urlopen(SRC.format(site)).read().decode()
     less = re.sub(r'/\* ==UserStyle==.*?==/UserStyle== \*/', '', less, flags=re.S)
     less = re.sub(r'@import "https://userstyles\.catppuccin\.com/lib/[^"]*";', '', less)
+    less = re.sub(r'@import url\("https://[^"]*"\);', '', less)   # external stylesheets (e.g. pygments colors) aren't used
     prep = HERE / f"{site}.prep.less"
     prep.write_text((HERE / "shim.less").read_text() + less)
     css = subprocess.run(f'npx --yes less@4.2.0 "{prep}"', capture_output=True, text=True, shell=True, check=True).stdout

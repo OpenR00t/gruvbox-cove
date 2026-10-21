@@ -30,12 +30,12 @@ primary accent (yellow only for warnings and types), and one type family:
 | [`discord/`](discord/) | Vencord / Vesktop theme | See [`discord/README.md`](discord/README.md) |
 | [`halloy/`](halloy/) | Halloy IRC theme + config snippet | See [`halloy/README.md`](halloy/README.md) |
 | [`steam/`](steam/) | Steam palette and fonts for Millennium's Material theme | See [`steam/README.md`](steam/README.md) |
-| [`stylus/`](stylus/) | GitHub, YouTube, DuckDuckGo styles and a global font style | Stylus → Write new style → paste |
+| [`stylus/`](stylus/) | GitHub, YouTube, DuckDuckGo, Twitch styles and a global font style | Stylus → Write new style → paste |
 | [`reddit/`](reddit/) | Old reddit theme (with RES), auto-expand userscript | Stylus; userscript manager |
 | [`wikipedia/`](wikipedia/) | Wikipedia (Vector 2022) theme | Paste into `meta.wikimedia.org/wiki/Special:MyPage/global.css` |
 | [`fonts/`](fonts/) | Cove Sans (12 styles) and its build scripts | Install the `.ttf` files |
 
-The GitHub, YouTube, DuckDuckGo and Discord themes are built from [Catppuccin](https://github.com/catppuccin)'s
+The GitHub, YouTube, DuckDuckGo, Twitch and Discord themes are built from [Catppuccin](https://github.com/catppuccin)'s
 maintained themes with the gruvbox palette swapped in; their build scripts pull Catppuccin's latest when a site changes.
 
 ## Staying up to date
@@ -53,7 +53,7 @@ Install from GitHub and the managers update themselves; each theme's version is 
   Raw GitHub links don't work here (served as plain text), and jsDelivr lets clients cache for 7 days.
 
 Automations in `.github/workflows/`:
-- **Catppuccin update** (weekly): rebuilds the GitHub, YouTube, DuckDuckGo and Discord themes from Catppuccin's latest
+- **Catppuccin update** (weekly): rebuilds the GitHub, YouTube, DuckDuckGo, Twitch and Discord themes from Catppuccin's latest
   templates and opens a pull request when anything changed.
 - **Wikipedia sync**: on every change to `wikipedia/gruvbox-wikipedia.css`, writes it to your `global.css` on Meta-Wiki.
   Off until the repository variable `WIKI_SYNC` is `true`; needs the secrets `WIKI_USER` and `WIKI_BOT_PASSWORD`
@@ -65,7 +65,7 @@ Automations in `.github/workflows/`:
 Licensed under the GNU Affero General Public License v3.0 or later. See [LICENSE](LICENSE).
 
 Exceptions, each marked with an SPDX header:
-- **Catppuccin-based themes** (`stylus/gruvbox-cove-{github,youtube,duckduckgo}.user.css`, `stylus/build/shim.less`,
+- **Catppuccin-based themes** (`stylus/gruvbox-cove-{github,youtube,duckduckgo,twitch}.user.css`, `stylus/build/shim.less`,
   `discord/`) stay under the MIT License of the Catppuccin projects they're built from
   ([`LICENSES/MIT-Catppuccin-userstyles.txt`](LICENSES/MIT-Catppuccin-userstyles.txt),
   [`LICENSES/MIT-Catppuccin-discord.txt`](LICENSES/MIT-Catppuccin-discord.txt)).

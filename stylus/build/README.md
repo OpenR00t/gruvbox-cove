@@ -1,6 +1,6 @@
 # Rebuilding the Catppuccin-based styles
 
-GitHub, YouTube and DuckDuckGo change their markup often. These three styles reuse Catppuccin's maintained userstyles
+GitHub, YouTube, DuckDuckGo and Twitch change their markup often. These styles reuse Catppuccin's maintained userstyles
 (MIT, see `LICENSES/MIT-Catppuccin-userstyles.txt` at the repo root) and swap in the gruvbox palette through `shim.less`.
 
 When something stops being themed:
