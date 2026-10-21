@@ -1,0 +1,188 @@
+/* ==UserStyle==
+@name         Gruvbox Cove — Amazon
+@namespace    gruvbox-cove
+@version      1.0.0
+@description  Gruvbox dark for amazon.com: green accent (Add to Cart, search), aqua Buy Now, product photos on a cream panel, CaskaydiaCove interface, Cove Sans SemiLight product descriptions and reviews.
+@author       The Gruvbox Cove contributors
+@license      AGPL-3.0-or-later
+==/UserStyle== */
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+   Copyright (C) 2026 The Gruvbox Cove contributors
+   Hand-written: Amazon has no dark mode and no maintained Catppuccin style. Built on Amazon's shared
+   "a-" component classes (a-box, a-button, a-color-*, a-price), which change rarely. */
+
+@-moz-document domain("amazon.com") {
+  :root {
+    --gb-bg-h: #1d2021; --gb-bg0: #282828; --gb-bg0-s: #32302f; --gb-bg1: #3c3836; --gb-bg2: #504945; --gb-bg3: #665c54; --gb-bg4: #7c6f64;
+    --gb-fg0: #fbf1c7; --gb-fg: #ebdbb2; --gb-fg2: #d5c4a1; --gb-fg3: #bdae93; --gb-fg4: #a89984; --gb-gray: #928374;
+    --gb-red: #fb4934; --gb-green: #b8bb26; --gb-green-d: #98971a; --gb-yellow: #fabd2f; --gb-blue: #83a598; --gb-purple: #d3869b; --gb-aqua: #8ec07c; --gb-orange: #fe8019;
+    /* Amazon's own header variables */
+    --nav-desktop-header-tbg: var(--gb-bg-h); --nav-desktop-header-bbg: var(--gb-bg0-s);
+    --nav-go-button-bg: var(--gb-green); --nav-go-button-hbg: var(--gb-green-d); --nav-search-border-shadow: var(--gb-green);
+    --nav-search-scope: var(--gb-bg2); --nav-search-scope-hover: var(--gb-bg3); --nav-x-shop-links: var(--gb-fg);
+    --nav-x-shop-links-active: var(--gb-fg3); --nav-cart-count: var(--gb-green); --nav-dropdown-arrows: var(--gb-fg4); --nav-search-labels: var(--gb-fg);
+    color-scheme: dark;
+  }
+  ::selection { background: var(--gb-bg2); color: var(--gb-fg0); }
+
+  /* ---------- Page surfaces ---------- */
+  html, body, #a-page, #dp, #dp-container, #ppd, .a-container, #search, #pageContent, #gw-layout, .s-desktop-content,
+  #nav-subnav, #nav-belt + #nav-main, .a-color-base-background, #skiplink, #rhf, #rhf-container, .rhf-frame,
+  #all-offers-display, #aod-container, .a-modal-scroller, .a-popover-wrapper, .a-popover-inner, .a-popover-header,
+  .a-dropdown-container .a-popover-inner, .a-color-alternate-background, .a-expander-header, .a-accordion-row,
+  .a-box.a-alert, .s-widget-container, #cm-cr-dp-review-list, .cr-widget-FocalReviews {
+    background-color: var(--gb-bg0) !important;
+    background-image: none !important;
+    color: var(--gb-fg) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+  .s-desktop-toolbar, .a-accordion-inner, .a-expander-section-container, .maple-banner--background,
+  [class*="_c2Itd_item_"], [class*="_bXVsd_hoverMovement"], .aplus-v2 table td, .aplus-v2 table th,
+  td.aplus-data-column, th.aplus-data-column, td.attribute, #nav-assist-shortcut-help, nav#shortcut-menu, .shortcut-help-container {
+    background-color: var(--gb-bg0) !important; color: var(--gb-fg) !important; border-color: var(--gb-bg2) !important;
+  }
+  /* Amazon styles these with id-level selectors; :not(#_) lifts ours above them */
+  :is(.a-expander-header, .a-expander-section-header, .btf-sub-nav-desktop-product-info-wrapper, .s-color-swatch-container,
+      .a-accordion-row, .a-accordion-inner, .a-box-inner, .a-box):not(#_) {
+    background-color: var(--gb-bg0-s) !important; border-color: var(--gb-bg2) !important;
+  }
+  :is(.a-expander-header, .a-expander-section-header, .s-color-swatch-container):not(#_) { background-color: transparent !important; }
+  /* Video strip and its loading placeholders */
+  .vse-hero-widget, [id^="vse-placeholder"], [id^="vse-placeholder"] div, [class*="_skeCard_"], [class*="_skeletal"] {
+    background-color: var(--gb-bg0) !important;
+  }
+  [class*="_skeCard_"] { background-color: var(--gb-bg1) !important; }
+  .apm-brand-story-hero, .apm-brand-story-card, [class*="apm-brand-story"] .a-carousel-card, .aplus-v2 .apm-tablemodule-table td {
+    background-color: var(--gb-bg0-s) !important; color: var(--gb-fg) !important;
+  }
+  :is(h1, h2, h3, h4, h5, .a-size-base-plus.a-text-bold, .a-size-medium-plus, .a-size-large):not(#_) { color: var(--gb-fg0) !important; }
+  /* Newer component boxes (review insights) */
+  .aui-primitive:not([class*="badge"]):not([class*="Badge"]) { background-color: transparent !important; }
+  [class*="dealMessage"] { background-color: var(--gb-red) !important; color: var(--gb-bg-h) !important; }
+  .shortcut-key { background-color: var(--gb-bg1) !important; color: var(--gb-fg) !important; }
+  .nav-search-field { background: var(--gb-bg-h) !important; }
+  #nav-subnav { background-color: var(--gb-bg0-s) !important; border-bottom: 1px solid var(--gb-bg1) !important; }
+  #nav-subnav .nav-a, #nav-subnav .nav-a-content { color: var(--gb-fg2) !important; }
+  #navFooter, #navFooter .navFooterLine, .navFooterBackToTop, .navLeftFooter, #navFooter.navLeftFooter { background-color: var(--gb-bg-h) !important; }
+  .navFooterBackToTop { background-color: var(--gb-bg1) !important; }
+
+  /* Cards and boxes */
+  .a-box, .a-box-inner, .a-cardui, .a-cardui-body, .s-card-container, .puis-card-container, .a-section.a-spacing-none.aok-relative,
+  .a-modal-scroller .a-popover, .a-popover, .a-dropdown-common .a-popover-inner, .a-ordered-list.a-vertical > li.a-dropdown-item,
+  .gw-card-layout .a-cardui, #desktop-grid-1 .a-cardui, [class*="_fbt-desktop_image-background"], #nav-flyout-accountList .nav-flyout-content {
+    background-color: var(--gb-bg0-s) !important;
+    border-color: var(--gb-bg2) !important;
+    color: var(--gb-fg) !important;
+  }
+  .a-box.a-color-alternate-background, .a-box.a-alert-success, .a-box.a-alert-info, .a-box.a-alert-warning, .a-box.a-alert-error {
+    background-color: var(--gb-bg1) !important;
+  }
+  .a-divider-normal, hr, .a-divider-inner::after, .a-divider-section { border-color: var(--gb-bg2) !important; background: none !important; }
+  .a-divider-inner { background: transparent !important; }
+  .a-divider-inner::after { background: var(--gb-bg2) !important; }
+  [class*="_tint_"], [class*="Tint_tint"] { background-color: transparent !important; }
+
+  /* ---------- Text ---------- */
+  body, .a-color-base, .a-text-normal, h1, h2, h3, h4, h5, h6, .a-size-base-plus, .a-size-medium, .a-size-large,
+  #productTitle, .a-list-item, label, td, th, p, li, .a-color-base a { color: var(--gb-fg) !important; }
+  h1, h2, h3, #productTitle, .a-text-bold { color: var(--gb-fg0) !important; }
+  .a-color-tertiary, .a-size-mini.a-color-base, .s-label-popover-default, .a-text-quote, .a-color-mini,
+  .a-text-strike, .a-price.a-text-price, .navFooterDescText, .nav-text, .nav-a-content, .a-size-small.a-color-secondary {
+    color: var(--gb-fg4) !important;
+  }
+  .a-color-secondary, .a-color-secondary span { color: var(--gb-fg3) !important; }
+  .a-color-price, .a-price, .a-price span, .savingPriceOverride, .priceToPay { color: var(--gb-fg0) !important; }
+  .a-price.a-text-price, .a-price.a-text-price span { color: var(--gb-fg4) !important; }
+  .a-color-price.savingPriceOverride, .savingsPercentage, .a-color-error, .asterisk { color: var(--gb-red) !important; }
+  .a-color-success, .primary-availability-message, #availability .a-color-success { color: var(--gb-green) !important; }
+  .a-color-state, .a-color-attainable { color: var(--gb-orange) !important; }
+  .prime-brand-color, [class*="prime-logo"] { color: var(--gb-blue) !important; }
+
+  /* Links */
+  a, a:visited, .a-link-normal, .a-link-emphasis, .a-link-expander, .a-expander-prompt { color: var(--gb-blue) !important; }
+  a:hover, .a-link-normal:hover { color: var(--gb-green) !important; }
+  .a-link-normal.a-color-base, .a-link-normal .a-color-base, .a-link-normal.s-link-style, .s-title-instructions-style a,
+  h2 a.a-link-normal, h2 a .a-text-normal { color: var(--gb-fg) !important; }
+  .a-link-normal.a-color-base:hover, h2 a.a-link-normal:hover, h2 a:hover .a-text-normal { color: var(--gb-green) !important; }
+
+  /* ---------- Header ---------- */
+  #navbar, #nav-belt, #nav-main { background-color: var(--gb-bg-h) !important; }
+  #nav-main { background-color: var(--gb-bg0-s) !important; }
+  .nav-line-1, .nav-line-2, .nav-a, #nav-xshop a, .nav-logo-locale, #nav-cart-count { color: var(--gb-fg) !important; }
+  #glow-ingress-line1, .nav-line-1 { color: var(--gb-fg4) !important; }
+  #nav-cart-count { color: var(--gb-green) !important; }
+  .nav-search-field input, #twotabsearchtextbox { background: var(--gb-bg-h) !important; color: var(--gb-fg) !important; }
+  .nav-search-scope, .nav-search-facade, #nav-search-label-id { background: var(--gb-bg2) !important; color: var(--gb-fg) !important; }
+  .nav-search-submit { background-color: var(--gb-green) !important; }
+  #nav-search-submit-button { background: transparent !important; }
+  .nav-flyout, .nav-flyout-body, .nav-template, #hmenu-content, #hmenu-content .hmenu, #nav-flyout-accountList .nav-flyout-content {
+    background: var(--gb-bg0-s) !important; color: var(--gb-fg) !important;
+  }
+  #hmenu-content .hmenu-item, .nav-flyout .nav-link .nav-text, .nav-flyout .nav-title { color: var(--gb-fg) !important; }
+  #hmenu-content .hmenu-item:hover { background: var(--gb-bg1) !important; }
+  #hmenu-customer-profile, .hmenu-header { background: var(--gb-bg-h) !important; }
+
+  /* ---------- Forms ---------- */
+  input[type="text"], input[type="search"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"], textarea, select,
+  .a-input-text, .a-dropdown-prompt, .a-native-dropdown {
+    background-color: var(--gb-bg-h) !important; color: var(--gb-fg) !important; border-color: var(--gb-bg3) !important;
+  }
+  input:focus, textarea:focus, select:focus { border-color: var(--gb-green) !important; box-shadow: 0 0 0 2px #b8bb2633 !important; outline: none !important; }
+
+  /* ---------- Buttons ---------- */
+  .a-button, .a-button-inner, .a-button-text, .a-button-base .a-button-inner, .a-button-normal .a-button-inner,
+  .a-button-toggle .a-button-inner, .a-button-dropdown .a-button-inner, .a-dropdown-container .a-button-inner {
+    background: var(--gb-bg1) !important; border-color: var(--gb-bg3) !important; color: var(--gb-fg) !important; box-shadow: none !important;
+  }
+  .a-button:hover .a-button-inner { background: var(--gb-bg2) !important; }
+  .a-button-primary, .a-button-primary .a-button-inner, .a-button-primary .a-button-text, .add-to-cart .a-button-inner,
+  .nav-action-signin-button, .nav-action-signin-button .nav-action-inner {
+    background: var(--gb-green) !important; border-color: var(--gb-green) !important; color: var(--gb-bg-h) !important;
+  }
+  .a-button-primary:hover .a-button-inner { background: var(--gb-green-d) !important; }
+  .a-button-oneclick, .a-button-oneclick .a-button-inner, .buy-now .a-button-inner, .a-button-oneclick .a-button-text {
+    background: var(--gb-aqua) !important; border-color: var(--gb-aqua) !important; color: var(--gb-bg-h) !important;
+  }
+  .a-button-selected, .a-button-selected .a-button-inner, .a-button-toggle.a-button-selected .a-button-inner {
+    background: var(--gb-bg2) !important; border-color: var(--gb-green) !important;
+  }
+  .a-badge-label, .a-badge-label-inner, .a-badge-text { color: var(--gb-bg-h) !important; }
+  [id$="-label"].a-badge-label, .a-badge-label { background: var(--gb-red) !important; }
+  [id*="amazons-choice"].a-badge-label, .ac-badge-wrapper .a-badge-label { background: var(--gb-bg1) !important; }
+  [id*="amazons-choice"] .a-badge-text, .ac-badge-text-primary { color: var(--gb-fg) !important; }
+  [class*="savingsRioCompliantBadgeLabel"], [class*="dealLabel"] { background: var(--gb-red) !important; color: var(--gb-bg-h) !important; }
+  .s-coupon-highlight-color { background: var(--gb-green) !important; color: var(--gb-bg-h) !important; }
+
+  /* ---------- Product images: white photo backgrounds blend into a light panel ---------- */
+  .s-image-square-aspect, .s-product-image-container, .s-image-fixed-height, #imgTagWrapperId, #main-image-container, .imgTagWrapper,
+  .a-dynamic-image-container, #altImages .a-button-thumbnail .a-button-inner, [class*="_image-background"] {
+    background-color: var(--gb-fg) !important;
+    border-radius: 6px;
+  }
+  .s-image, #landingImage, #imgTagWrapperId img, #altImages img, .s-product-image-container img, [class*="_image-background"] img {
+    mix-blend-mode: multiply;
+  }
+
+  /* Tables (product details, comparison) */
+  table, .a-keyvalue, .a-normal, .prodDetTable, #productDetails_techSpec_section_1, #productOverview_feature_div table {
+    background: transparent !important; border-color: var(--gb-bg2) !important;
+  }
+  .prodDetTable th, .a-keyvalue th, .a-span3 { background: var(--gb-bg0-s) !important; color: var(--gb-fg3) !important; }
+  .prodDetTable td, .prodDetTable th, .a-keyvalue td, .a-keyvalue th { border-color: var(--gb-bg2) !important; }
+
+  /* Reviews */
+  .a-meter, .a-meter-bar { background: var(--gb-bg1) !important; border-color: var(--gb-bg2) !important; }
+  .a-meter-filled { background: var(--gb-green) !important; }
+
+  /* ---------- Font rule ---------- */
+  body, body *:not(svg):not(svg *):not([class*="a-icon"]):not([class*="nav-icon"]) {
+    font-family: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", Consolas, monospace !important;
+  }
+  /* Prose: product bullets and description, reviews, A+ content text */
+  :is(#feature-bullets, #productFactsDesktopExpander, #productDescription, #bookDescription_feature_div, .aplus-v2, [data-hook="review-body"], .review-text, .review-text-content, #cr-product-insights-cards) :is(p, li, span:not([class*="a-icon"])),
+  [data-hook="review-body"], .review-text-content, #productDescription p {
+    font-family: "Cove Sans", "Segoe UI", sans-serif !important;
+    font-weight: 350;
+  }
+  :is(#feature-bullets, #productDescription, [data-hook="review-body"], .aplus-v2) :is(strong, b, .a-text-bold) { font-weight: 700; }
+}

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — global fonts
 @namespace    gruvbox-cove
-@version      1.6.0
+@version      1.7.0
 @description  The font rule on every site without a hand-made theme: prose in Cove Sans; interface, headings and code in CaskaydiaCove. Icon fonts are left alone.
 @author       The Gruvbox Cove contributors
 @license      AGPL-3.0-or-later
@@ -21,7 +21,7 @@
   Copyright (C) 2026 The Gruvbox Cove contributors
 */
 
-@-moz-document regexp("^https?://(?!([^/]*\\.)?reddit\\.com|([^/]*\\.)?youtube\\.com|([^/]*\\.)?github\\.com|([^/]*\\.)?duckduckgo\\.com|([^/]*\\.)?duck\\.ai|([^/]*\\.)?wikipedia\\.org|([^/]*\\.)?wikimedia\\.org|([^/]*\\.)?wiktionary\\.org|([^/]*\\.)?mediawiki\\.org|([^/]*\\.)?twitch\\.tv)[^/]+(/.*)?$") {
+@-moz-document regexp("^https?://(?!([^/]*\\.)?reddit\\.com|([^/]*\\.)?youtube\\.com|([^/]*\\.)?github\\.com|([^/]*\\.)?duckduckgo\\.com|([^/]*\\.)?duck\\.ai|([^/]*\\.)?wikipedia\\.org|([^/]*\\.)?wikimedia\\.org|([^/]*\\.)?wiktionary\\.org|([^/]*\\.)?mediawiki\\.org|([^/]*\\.)?twitch\\.tv|([^/]*\\.)?amazon\\.com)[^/]+(/.*)?$") {
 
   :root {
     --gbc-mono: "CaskaydiaCove Nerd Font", "CaskaydiaCove Nerd Font Mono", "Cascadia Code", "Cascadia Mono", Consolas, monospace;

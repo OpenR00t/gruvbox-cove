@@ -30,7 +30,7 @@ primary accent (yellow only for warnings and types), and one type family:
 | [`discord/`](discord/) | Vencord / Vesktop theme | See [`discord/README.md`](discord/README.md) |
 | [`halloy/`](halloy/) | Halloy IRC theme + config snippet | See [`halloy/README.md`](halloy/README.md) |
 | [`steam/`](steam/) | Steam palette and fonts for Millennium's Material theme | See [`steam/README.md`](steam/README.md) |
-| [`stylus/`](stylus/) | GitHub, YouTube, DuckDuckGo, Twitch styles and a global font style | Stylus → Write new style → paste |
+| [`stylus/`](stylus/) | GitHub, YouTube, DuckDuckGo, Twitch, Amazon styles and a global font style | Stylus → Write new style → paste |
 | [`reddit/`](reddit/) | Old reddit theme (with RES), auto-expand userscript | Stylus; userscript manager |
 | [`wikipedia/`](wikipedia/) | Wikipedia (Vector 2022) theme | Paste into `meta.wikimedia.org/wiki/Special:MyPage/global.css` |
 | [`fonts/`](fonts/) | Cove Sans (12 styles) and its build scripts | Install the `.ttf` files |

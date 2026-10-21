@@ -10,3 +10,4 @@ wikimedia.org
 wiktionary.org
 mediawiki.org
 twitch.tv
+amazon.com
