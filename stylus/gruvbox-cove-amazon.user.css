@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — Amazon
 @namespace    gruvbox-cove
-@version      1.0.0
+@version      1.0.1
 @description  Gruvbox dark for amazon.com: green accent (Add to Cart, search), aqua Buy Now, product photos on a cream panel, CaskaydiaCove interface, Cove Sans SemiLight product descriptions and reviews.
 @author       The Gruvbox Cove contributors
 @license      AGPL-3.0-or-later
@@ -47,6 +47,14 @@
     background-color: var(--gb-bg0-s) !important; border-color: var(--gb-bg2) !important;
   }
   :is(.a-expander-header, .a-expander-section-header, .s-color-swatch-container):not(#_) { background-color: transparent !important; }
+  /* Home page: card deck, mosaic rows, dashboard tiles */
+  #gwm-Deck, #gwm-Deck-btf, [class*="_hp-mosaic-container_style_container"], [id^="CardInstance"] {
+    background-color: var(--gb-bg0) !important; color: var(--gb-fg) !important;
+  }
+  /* Cards Amazon themes itself (photo or color backgrounds with matching text): keep Amazon's background and text color */
+  .theming-card-background .a-cardui:not(#_) { background-color: transparent !important; }
+  .theming-card-header :is(h2, h3, span, div, a, .a-list-item):not(#_) { color: inherit !important; }
+  li.gwm-tile, .gwm-window-tile, .gwm-window-skeleton { background-color: var(--gb-bg0-s) !important; color: var(--gb-fg) !important; }
   /* Video strip and its loading placeholders */
   .vse-hero-widget, [id^="vse-placeholder"], [id^="vse-placeholder"] div, [class*="_skeCard_"], [class*="_skeletal"] {
     background-color: var(--gb-bg0) !important;
@@ -155,11 +163,13 @@
 
   /* ---------- Product images: white photo backgrounds blend into a light panel ---------- */
   .s-image-square-aspect, .s-product-image-container, .s-image-fixed-height, #imgTagWrapperId, #main-image-container, .imgTagWrapper,
-  .a-dynamic-image-container, #altImages .a-button-thumbnail .a-button-inner, [class*="_image-background"] {
+  .a-dynamic-image-container, #altImages .a-button-thumbnail .a-button-inner, [class*="_image-background"],
+  [class*="asin-container"] {
     background-color: var(--gb-fg) !important;
     border-radius: 6px;
   }
-  .s-image, #landingImage, #imgTagWrapperId img, #altImages img, .s-product-image-container img, [class*="_image-background"] img {
+  .s-image, #landingImage, #imgTagWrapperId img, #altImages img, .s-product-image-container img, [class*="_image-background"] img,
+  [class*="asin-container"] img, li.gwm-tile img {
     mix-blend-mode: multiply;
   }
 
