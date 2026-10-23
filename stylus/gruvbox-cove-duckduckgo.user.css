@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — DuckDuckGo
 @namespace    gruvbox-cove
-@version      1.0.2
+@version      1.0.3
 @description  Gruvbox dark, green accent, CaskaydiaCove interface and result titles, Cove Sans for result snippets, answers and Duck.ai replies. Works with any DuckDuckGo theme setting.
 @author       The Gruvbox Cove contributors
 @license      MIT
@@ -3955,5 +3955,18 @@
   [data-testid="result-title-a"], [data-testid="result-title-a"] *,
   [data-testid="result-extras-url-link"], [data-testid="result-extras-url-link"] * {
     font-family: var(--gbc-mono) !important;
+  }
+}
+
+/* ---------- Scroll-edge fades ----------
+   The tab row, filter row and metabar fade their overflow edges from
+   "<colour>-transparent" to "<colour>". Only the solid ends are themed upstream,
+   so the transparent ends stayed DuckDuckGo's grey and drew dark smears. */
+@-moz-document domain("duckduckgo.com"), domain("duck.ai") {
+  :root {
+    --theme-col-bg-page-transparent: rgba(40, 40, 40, 0) !important;
+    --theme-col-bg-header-transparent: rgba(29, 32, 33, 0) !important;
+    --theme-col-metabar-bg: #1d2021 !important;
+    --theme-col-metabar-transparent: rgba(29, 32, 33, 0) !important;
   }
 }
