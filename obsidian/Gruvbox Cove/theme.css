@@ -115,7 +115,7 @@
   --line-height-normal: 1.6;
   --line-height-tight: 1.4;
   --file-line-width: 90ch;
-  --bold-color: var(--gb-fg0);
+  --bold-color: var(--gb-orange);   /* bold stands out from SemiLight prose */
   --bold-weight: 700;
 
   /* Named colors Obsidian uses everywhere */
@@ -339,6 +339,8 @@
   --callout-bug: var(--gb-red-rgb);
   --callout-quote: var(--gb-gray-rgb);
   --callout-radius: 6px;
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.45;
 }
 
 /* ---------- Rules variables can't reach ---------- */
@@ -351,6 +353,20 @@
 /* Prose weight in reading view: Cove Sans SemiLight (350); bold keeps its weight */
 .markdown-preview-view :is(p, li, blockquote, td, dd, figcaption) {
   font-weight: 350;
+}
+
+/* Callouts: a tinted box with a thin border in the callout's colour, so
+   summary / next-step blocks read as separate panels from the prose. */
+.callout {
+  background-color: rgba(var(--callout-color), 0.14);
+}
+.callout-title {
+  color: rgb(var(--callout-color));
+}
+
+/* Bold in the editor too (Live Preview / Source) */
+.cm-s-obsidian .cm-strong {
+  color: var(--bold-color);
 }
 
 /* Inline code: orange on bg1, like the reddit and Wikipedia themes */
