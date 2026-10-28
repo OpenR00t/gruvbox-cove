@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Gruvbox Cove — YouTube
 @namespace    gruvbox-cove
-@version      1.0.3
+@version      1.0.4
 @description  Gruvbox dark, green accent, CaskaydiaCove interface and titles, Cove Sans for descriptions, comments and chat. Set YouTube's appearance to Dark theme.
 @author       The Gruvbox Cove contributors
 @license      MIT
@@ -814,12 +814,10 @@
   :root[dark] .ytLockupMetadataViewModelMetadata {
     color: #a89984 !important;
   }
+  :root[dark] .ytBadgeShapeThumbnailSpecial,
   :root[dark] .ytBadgeShapeDefault {
-    color: #a89984;
-    background: #504945;
-  }
-  :root[dark] .ytBadgeShapeDefault.ytBadgeShapeModern {
-    background: none;
+    color: #282828;
+    background: #b8bb26;
   }
   :root[dark] .ytBadgeShapeCommerce {
     color: #b8bb26;
@@ -1808,12 +1806,10 @@
   :root:not([dark]) .ytLockupMetadataViewModelMetadata {
     color: #a89984 !important;
   }
+  :root:not([dark]) .ytBadgeShapeThumbnailSpecial,
   :root:not([dark]) .ytBadgeShapeDefault {
-    color: #a89984;
-    background: #504945;
-  }
-  :root:not([dark]) .ytBadgeShapeDefault.ytBadgeShapeModern {
-    background: none;
+    color: #282828;
+    background: #b8bb26;
   }
   :root:not([dark]) .ytBadgeShapeCommerce {
     color: #b8bb26;
