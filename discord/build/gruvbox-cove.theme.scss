@@ -3,14 +3,10 @@
 // Copyright (c) 2026 The Gruvbox Cove contributors
 @use "sass:math";
 
-.visual-refresh.theme-dark,
-.visual-refresh .theme-dark,
-.visual-refresh.theme-light,
-.visual-refresh .theme-light,
-.visual-refresh.theme-darker,
-.visual-refresh .theme-darker,
-.visual-refresh.theme-midnight,
-.visual-refresh .theme-midnight {
+// One selector per Discord theme class instead of eight: :is() keeps the same
+// specificity (one class) while cutting the number of rules Discord has to match by 4x.
+.visual-refresh:is(.theme-dark, .theme-light, .theme-darker, .theme-midnight),
+.visual-refresh :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight) {
   @import "gruvbox";
   $brand: $green;
 

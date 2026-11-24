@@ -14,14 +14,23 @@
 }
 /* Prose: message text, embed descriptions, forum/thread previews -> Cove Sans Light (300): one step below the
    SemiLight used elsewhere, which reads heavy at Discord's 16px message size.
-   Message bodies are matched by their id (message-content-<id>), which survives Discord's class renames;
-   the text sits in child spans that Discord gives its own font, so children are set too. */
+   Message bodies are matched by their id (message-content-<id>), which survives Discord's class renames.
+   Set on the containers and inherited: Discord's own text spans read --font-primary, so pointing that
+   variable at Cove Sans inside a message reaches them without a descendant "*" rule (a "* " rule makes
+   every element in the app walk its ancestors on every update, which slows Discord down). */
 :is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
-    [class*="threadMessageAccessoryContent"], [class*="repliedTextContent"]),
-:is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"],
-    [class*="threadMessageAccessoryContent"], [class*="repliedTextContent"]) *:not(code):not(pre):not(pre *):not(h1):not(h2):not(h3):not(strong):not(b) {
+    [class*="threadMessageAccessoryContent"], [class*="repliedTextContent"]) {
+  --font-primary: var(--gbc-read) !important;
   font-family: var(--gbc-read) !important;
   font-weight: 300 !important;
+}
+/* Spans that set their own font: only spans, only inside message bodies */
+[id^="message-content-"] span {
+  font-family: var(--gbc-read) !important;
+  font-weight: 300 !important;
+}
+[id^="message-content-"] :is(code, pre, h1, h2, h3, strong, b) span {
+  font-weight: inherit !important;
 }
 :is([id^="message-content-"], [class*="messageContent"], [class*="embedDescription"], [class*="embedFieldValue"]) :is(strong, b) {
   font-weight: 700 !important;

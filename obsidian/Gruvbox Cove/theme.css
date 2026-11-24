@@ -400,32 +400,54 @@
   color: var(--gb-fg0);
 }
 
-/* Mermaid diagrams in the palette */
-.markdown-rendered .mermaid .node rect,
-.markdown-rendered .mermaid .node polygon,
-.markdown-rendered .mermaid .node circle {
+/* Mermaid diagrams in the palette. Unprefixed so Live Preview embeds get it
+   too (they aren't inside .markdown-rendered). Mermaid's own CSS is ID-scoped
+   but not !important, so these win. */
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node path {
   fill: var(--gb-bg1) !important;
   stroke: var(--gb-accent) !important;
 }
-.markdown-rendered .mermaid .nodeLabel,
-.markdown-rendered .mermaid .label {
+.mermaid .nodeLabel,
+.mermaid .nodeLabel *,
+.mermaid .node .label,
+.mermaid .node .label * {
   color: var(--gb-fg) !important;
   fill: var(--gb-fg) !important;
 }
-.markdown-rendered .mermaid .flowchart-link,
-.markdown-rendered .mermaid .edgePath .path {
+.mermaid .cluster rect {
+  fill: var(--gb-bg-h) !important;
+  stroke: var(--gb-bg3) !important;
+}
+.mermaid .cluster-label,
+.mermaid .cluster-label * {
+  color: var(--gb-fg3) !important;
+  fill: var(--gb-fg3) !important;
+}
+.mermaid .flowchart-link,
+.mermaid .edgePath .path {
   stroke: var(--gb-fg4) !important;
 }
-.markdown-rendered .mermaid marker path,
-.markdown-rendered .mermaid .arrowheadPath {
+.mermaid marker path,
+.mermaid .arrowheadPath,
+.mermaid .arrowMarkerPath {
   fill: var(--gb-fg4) !important;
   stroke: var(--gb-fg4) !important;
 }
-.markdown-rendered .mermaid .edgeLabel,
-.markdown-rendered .mermaid .edgeLabel rect {
+.mermaid .edgeLabel,
+.mermaid .edgeLabel *,
+.mermaid .edgeLabel rect,
+.mermaid .labelBkg {
   background-color: var(--gb-bg0) !important;
   fill: var(--gb-bg0) !important;
-  color: var(--gb-fg3) !important;
+  color: var(--gb-fg2) !important;
+}
+.mermaid .edgeLabel text,
+.mermaid .edgeLabel tspan {
+  fill: var(--gb-fg2) !important;
 }
 
 /* Dataview tables match the Bases / markdown tables */
